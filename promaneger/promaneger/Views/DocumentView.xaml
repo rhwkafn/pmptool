@@ -1,0 +1,313 @@
+﻿<UserControl
+    x:Class="promaneger.Views.DocumentView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:ext="clr-namespace:promaneger.Extensions"
+    xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:local="clr-namespace:promaneger.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:prism="http://prismlibrary.com/"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+
+    <Grid>
+
+        <Grid.Resources>
+            <!--  设置水平导航栏样式  -->
+
+            <Style TargetType="Separator">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Separator}">
+                            <Border
+                                Width="2"
+                                Height="12"
+                                Margin="4"
+                                Background="Transparent" />
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="daohanglan" TargetType="ListBox">
+                <Setter Property="ItemsPanel">
+                    <Setter.Value>
+                        <ItemsPanelTemplate>
+                            <StackPanel
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Orientation="Horizontal" />
+                        </ItemsPanelTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Background" Value="Transparent" />
+
+
+            </Style>
+
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <TextBlock
+            Margin="20,10"
+            FontSize="26"
+            Text="服务文档" />
+
+        <Border BorderBrush="Black" BorderThickness="0,0,0,0.3" />
+        <StackPanel
+            Grid.Row="1"
+            HorizontalAlignment="Center"
+            Orientation="Horizontal">
+            <ListBox
+                x:Name="NavigationList"
+                Width="Auto"
+                Height="50"
+                BorderBrush="Gray"
+                BorderThickness="0,0,0,1"
+                ItemsSource="{Binding MenuBars}"
+                ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                Style="{StaticResource daohanglan}">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <i:InvokeCommandAction Command="{Binding DelegateCommand}" CommandParameter="{Binding SelectedItem, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ListBox}}" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+
+
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Background="Transparent" Orientation="Horizontal">
+                            <md:PackIcon Margin="10,7,20,10" Kind="{Binding Icon}" />
+                            <TextBlock Margin="10,5,20,10" Text="{Binding Title}" />
+                            <Separator />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+
+
+
+            </ListBox>
+
+
+        </StackPanel>
+
+
+
+        <Grid Grid.Row="2" Margin="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="250" />
+            </Grid.ColumnDefinitions>
+
+
+
+            <ContentControl
+                Grid.Column="0"
+                Margin="20,0"
+                prism:RegionManager.RegionName="{x:Static ext:PrismManager.DocumentsViewRegionName}" />
+
+            <Border
+                Grid.Column="1"
+                Margin="10,0"
+                Background="#bebebebe"
+                CornerRadius="5"
+                Opacity="0.1" />
+            <DockPanel Grid.Column="1" Margin="10,0">
+                <DockPanel
+                    Margin="10,5"
+                    DockPanel.Dock="Top"
+                    LastChildFill="False">
+                    <TextBlock
+                        FontSize="20"
+                        FontWeight="Bold"
+                        Text="备忘录" />
+                    <Button
+                        Width="30"
+                        Height="30"
+                        VerticalAlignment="Top"
+                        Command="{Binding ShowAddMemoDialogCmm}"
+                        DockPanel.Dock="Right"
+                        Style="{StaticResource MaterialDesignFloatingActionAccentButton}">
+                        <md:PackIcon Kind="Add" />
+                    </Button>
+                </DockPanel>
+
+                <!--  数据列表  -->
+                <ListBox
+                    HorizontalContentAlignment="Stretch"
+                    ItemsSource="{Binding MemoList}"
+                    ScrollViewer.CanContentScroll="False"
+                    ScrollViewer.VerticalScrollBarVisibility="Hidden">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseDoubleClick">
+                            <i:InvokeCommandAction Command="{Binding ShowEditMemoDialogCmm}" CommandParameter="{Binding SelectedItem, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ListBox}}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <DockPanel MaxHeight="300" LastChildFill="False">
+
+                                <md:PopupBox
+                                    Grid.Column="2"
+                                    HorizontalAlignment="Right"
+                                    Panel.ZIndex="1"
+                                    Foreground="{DynamicResource PrimaryHueLightBrush}">
+                                    <Button
+                                        Command="{Binding DataContext.DelMemoCmm, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ListBox}}"
+                                        CommandParameter="{Binding}"
+                                        Content="删除" />
+                                </md:PopupBox>
+
+
+
+                                <StackPanel>
+                                    <TextBlock
+                                        FontSize="16"
+                                        FontWeight="Bold"
+                                        Text="{Binding Title}" />
+                                    <TextBlock
+                                        Margin="0,5"
+                                        Opacity="0.5"
+                                        Text="{Binding Content}"
+                                        TextWrapping="Wrap" />
+
+                                </StackPanel>
+
+                            </DockPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+
+            </DockPanel>
+
+
+
+
+        </Grid>
+    </Grid>
+
+    <!--<TreeView>
+        <TreeViewItem Header="项1" IsExpanded="False">
+            <TreeViewItem.HeaderTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="image1.png" Width="20" Height="20"/>
+                        <TextBlock Text="项1" Margin="5,0,0,0"/>
+                    </StackPanel>
+                </DataTemplate>
+            </TreeViewItem.HeaderTemplate>
+            <TreeViewItem.Items>
+                <TreeViewItem Header="子项1-1"/>
+                <TreeViewItem Header="子项1-2"/>
+            </TreeViewItem.Items>
+        </TreeViewItem>
+        <TreeViewItem Header="项2" IsExpanded="False">
+            <TreeViewItem.HeaderTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="image2.png" Width="20" Height="20"/>
+                        <TextBlock Text="项2" Margin="5,0,0,0"/>
+                    </StackPanel>
+                </DataTemplate>
+            </TreeViewItem.HeaderTemplate>
+            <TreeViewItem.Items>
+                <TreeViewItem Header="子项2-1"/>
+                <TreeViewItem Header="子项2-2"/>
+            </TreeViewItem.Items>
+        </TreeViewItem>
+        <TreeViewItem Header="项3" IsExpanded="False">
+            <TreeViewItem.HeaderTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="image3.png" Width="20" Height="20"/>
+                        <TextBlock Text="项3" Margin="5,0,0,0"/>
+                    </StackPanel>
+                </DataTemplate>
+            </TreeViewItem.HeaderTemplate>
+            <TreeViewItem.Items>
+                <TreeViewItem Header="子项3-1"/>
+                <TreeViewItem Header="子项3-2"/>
+            </TreeViewItem.Items>
+        </TreeViewItem>
+        <TreeViewItem Header="项4" IsExpanded="False">
+            <TreeViewItem.HeaderTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="image4.png" Width="20" Height="20"/>
+                        <TextBlock Text="项4" Margin="5,0,0,0"/>
+                    </StackPanel>
+                </DataTemplate>
+            </TreeViewItem.HeaderTemplate>
+            <TreeViewItem.Items>
+                <TreeViewItem Header="子项4-1"/>
+                <TreeViewItem Header="子项4-2"/>
+            </TreeViewItem.Items>
+        </TreeViewItem>
+        <TreeViewItem Header="项5" IsExpanded="False">
+            <TreeViewItem.HeaderTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="image5.png" Width="20" Height="20"/>
+                        <TextBlock Text="项5" Margin="5,0,0,0"/>
+                    </StackPanel>
+                </DataTemplate>
+            </TreeViewItem.HeaderTemplate>
+            <TreeViewItem.Items>
+                <TreeViewItem Header="子项5-1"/>
+                <TreeViewItem Header="子项5-2"/>
+            </TreeViewItem.Items>
+        </TreeViewItem>
+    </TreeView>-->
+
+    <!--<TreeView>
+        <TreeViewItem Header="项目管理文档" IsExpanded="True">
+            <TreeViewItem.HeaderTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="image_doc.png" Width="20" Height="20"/>
+                        <TextBlock Text="项目管理文档" Margin="5,0,0,0"/>
+                    </StackPanel>
+                </DataTemplate>
+            </TreeViewItem.HeaderTemplate>
+            <TreeViewItem.Items>
+                <TreeViewItem Header="管理方案" IsExpanded="True">
+                    <TreeViewItem.Items>
+                        <TreeViewItem Header="项目目标"/>
+                        <TreeViewItem Header="项目组织结构"/>
+                        <TreeViewItem Header="项目计划"/>
+                        <TreeViewItem Header="风险管理"/>
+                    </TreeViewItem.Items>
+                </TreeViewItem>
+                <TreeViewItem Header="表格模板" IsExpanded="True">
+                    <TreeViewItem.Items>
+                        <TreeViewItem Header="项目章程模板"/>
+                        <TreeViewItem Header="工作分解结构（WBS）模板"/>
+                        <TreeViewItem Header="进度计划模板"/>
+                        <TreeViewItem Header="风险评估模板"/>
+                    </TreeViewItem.Items>
+                </TreeViewItem>
+                <TreeViewItem Header="质量管理" IsExpanded="True">
+                    <TreeViewItem.Items>
+                        <TreeViewItem Header="质量目标"/>
+                        <TreeViewItem Header="质量控制措施"/>
+                        <TreeViewItem Header="质量评估方法"/>
+                    </TreeViewItem.Items>
+                </TreeViewItem>
+                <TreeViewItem Header="沟通管理" IsExpanded="True">
+                    <TreeViewItem.Items>
+                        <TreeViewItem Header="沟通计划"/>
+                        <TreeViewItem Header="会议记录模板"/>
+                        <TreeViewItem Header="报告模板"/>
+                    </TreeViewItem.Items>
+                </TreeViewItem>
+            </TreeViewItem.Items>
+        </TreeViewItem>
+    </TreeView>-->
+</UserControl>

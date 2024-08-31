@@ -1,0 +1,151 @@
+﻿<UserControl
+    x:Class="promaneger.Views.General.SandianView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ac="https://gitee.com/akwkevin/AI-wpf-controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:promaneger.Views.General"     xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <Grid>
+
+
+
+        <DockPanel Grid.Row="0">
+
+
+
+
+
+            <FlowDocumentScrollViewer DockPanel.Dock="Top">
+                <FlowDocument
+                    FontFamily="{DynamicResource MahApps.Fonts.Family.Control}"
+                    FontSize="14"
+                    Foreground="{DynamicResource MahApps.Brushes.Text}"
+                    LineHeight="20">
+
+                    <Paragraph>
+
+                        <Bold>三点估算法</Bold>
+                        <LineBreak />
+                        三点估算法，也叫PERT估算法（ProgramEvaluationandReviewTechnique）。<LineBreak />
+                        在估算活动工期时考虑三种可能的情况（最坏、一般和最好），<LineBreak />
+                        得出最悲观工期、最可能工期和最乐观工期，再据此计算出期望工期（平均工期）<LineBreak />
+                        用PERT法计算工期，必须记住下面四个公式（其中P代表最悲观工期，M代表最可能工期，O 代表最乐观工期）：<LineBreak />
+                        PERT公式1 （假设活动工期呈贝塔分布）：<LineBreak />
+                        <LineBreak />
+                        (P + 4 M + O)/6<LineBreak />
+                        <LineBreak />
+                        PERT公式2 （假设活动工期呈三角分布）：<LineBreak />
+                        <LineBreak />
+                        (P + M + O)/3<LineBreak />
+
+                        <LineBreak />
+                        标准差公式：<LineBreak />
+                        <LineBreak />
+                        (P-O)/6<LineBreak />
+                        <LineBreak />
+                        方差公式：[(P-O)/6]^2
+                        <Figure HorizontalAnchor="ColumnLeft" VerticalAnchor="ContentCenter">
+                            <BlockUIContainer>
+                                <Image
+                                    Width="600"
+                                    Height="150"
+                                    Source="/Images/Document/general/san1.png" />
+                            </BlockUIContainer>
+                        </Figure>
+                        <LineBreak />
+                        用正态统计分布图，工期落在平均工期一个标准差（通常用表示标准差）之内的概率是68.26% ，<LineBreak />
+                        两个标准差之内的概率是95.46% ，三个标准差之内的概率是99.73%<LineBreak />
+
+
+                    </Paragraph>
+
+
+
+                    <Paragraph>
+
+                        <LineBreak />
+                        计算项目的工期，可把同一条关键路径上的全部活动（假设都是不带提前量或滞后量的完成到开始关系）的平均工期加起来，<LineBreak />
+                        得到项目的平均工期，然后再把这些活动的方差之和开平方得到项目工期的标准差，<LineBreak />
+                        从而计算出在指定标准差区间内的相应项目工期区间。<LineBreak />
+                        <LineBreak />
+                        在讨论三点估算的同时，也简单介绍一下单点估算和多点估算。<LineBreak />
+                        顾名思义，单点估算是只考虑一种最可能的情况，用最可能的工期作为活动的工期估算。
+                        例如，某项活动通常需要5天完工，就用5天作为该活动的工期估算，而不考虑也有一定可能性的4 天和6 天。
+                        单点估算法就是C P M （关键路径）估算法。<LineBreak />
+                        <LineBreak />
+                        多点估算，当然要考虑很多种可能性。借助计算机，模拟某个项目或活动实施许多次甚至成千上万次，看看有多少次在多少天内完工，并据此画出可能工期的区间及概率
+                        分布图。<LineBreak />
+                        <LineBreak />
+                        根据概率分布图，就可知道在某一特定时间内完成项目或活动的概率是多少。
+                        蒙特卡洛模拟法是一种常用的多点估算法，往往用于整个项目而不是某个活动层面。<LineBreak />
+                        <LineBreak />
+                        以下为案例表格计算：<LineBreak />
+
+
+                    </Paragraph>
+                    <BlockUIContainer>
+                        <Image
+                            Width="600px"
+                            Height="200px"
+                            Source="/Images/Document/general/san2.png" />
+                    </BlockUIContainer>
+
+                    <BlockUIContainer>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="3*" />
+                            </Grid.ColumnDefinitions>
+
+                            <!-- 左侧输入区域 -->
+                            <StackPanel Grid.Column="0" Margin="10">
+                                <TextBlock Text="添加活动" FontWeight="Bold" FontSize="16" Margin="0,0,0,10"/>
+                                <TextBox x:Name="ActivityName" md:HintAssist.Hint="活动名称" Margin="0,0,0,10"/>
+                                <TextBox x:Name="OptimisticDuration" md:HintAssist.Hint="乐观工期" Margin="0,0,0,10"/>
+                                <TextBox x:Name="MostLikelyDuration" md:HintAssist.Hint="一般工期" Margin="0,0,0,10"/>
+                                <TextBox x:Name="PessimisticDuration" md:HintAssist.Hint="悲观工期" Margin="0,0,0,10"/>
+                                <Button Content="添加活动" Click="AddActivity_Click"/>
+                            </StackPanel>
+
+                            <!-- 右侧图示表格 -->
+                            <DataGrid x:Name="ActivitiesDataGrid" Grid.Column="1" AutoGenerateColumns="False" Margin="10">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="活动" Binding="{Binding Name}" />
+                                    <DataGridTextColumn Header="乐观工期" Binding="{Binding Optimistic}" />
+                                    <DataGridTextColumn Header="一般工期" Binding="{Binding MostLikely}" />
+                                    <DataGridTextColumn Header="悲观工期" Binding="{Binding Pessimistic}" />
+                                    <DataGridTextColumn Header="平均时间" Binding="{Binding ExpectedTime}" />
+                                    <DataGridTextColumn Header="标准差" Binding="{Binding StandardDeviation}" />
+                                    <DataGridTextColumn Header="方差" Binding="{Binding Variance}" />
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Grid>
+
+                    </BlockUIContainer>
+
+
+                </FlowDocument>
+
+
+                
+            </FlowDocumentScrollViewer>
+
+
+
+
+        </DockPanel>
+
+
+
+
+
+
+    </Grid>
+
+
+</UserControl>

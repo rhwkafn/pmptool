@@ -1,0 +1,164 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Images\Document\dingyi\10001.png" />
+    <None Remove="Images\Document\dingyi\10002.png" />
+    <None Remove="Images\Document\dingyi\10003.png" />
+    <None Remove="Images\Document\dingyi\10004.png" />
+    <None Remove="Images\Document\dingyi\10005.png" />
+    <None Remove="Images\Document\fengxian\实施定性3.png" />
+    <None Remove="Images\Document\fengxian\实施定量4.png" />
+    <None Remove="Images\Document\fengxian\控制风险6.png" />
+    <None Remove="Images\Document\fengxian\规划1.png" />
+    <None Remove="Images\Document\fengxian\规划应对5.png" />
+    <None Remove="Images\Document\fengxian\识别风险2.png" />
+    <None Remove="Images\Document\general\san1.png" />
+    <None Remove="Images\Document\general\san2.png" />
+    <None Remove="Images\Document\general\wang2.png" />
+    <None Remove="Images\Document\general\wang3.png" />
+    <None Remove="Images\Document\general\wang4.png" />
+    <None Remove="Images\Document\general\wangluo1.png" />
+    <None Remove="Images\Document\general\zhegn2.png" />
+    <None Remove="Images\Document\general\zheng1.png" />
+    <None Remove="Images\Document\general\zheng3.png" />
+    <None Remove="Images\Document\general\zheng4.png" />
+    <None Remove="Images\Document\general\zheng5.png" />
+    <None Remove="Images\Document\人力\建设项目团队.png" />
+    <None Remove="Images\Document\人力\管理项目团队.png" />
+    <None Remove="Images\Document\人力\组建项目团队.png" />
+    <None Remove="Images\Document\人力\规划人力资源管理.png" />
+    <None Remove="Images\Document\变更审批.png" />
+    <None Remove="Images\Document\干系人\控制干系人参与.png" />
+    <None Remove="Images\Document\干系人\管理干系人参与.png" />
+    <None Remove="Images\Document\干系人\规划干系人管理.png" />
+    <None Remove="Images\Document\干系人\识别干系人.png" />
+    <None Remove="Images\Document\成本\估算成本.png" />
+    <None Remove="Images\Document\成本\制定预算.png" />
+    <None Remove="Images\Document\成本\挣值管理.png" />
+    <None Remove="Images\Document\成本\控制成本.png" />
+    <None Remove="Images\Document\成本\规划成本管理.png" />
+    <None Remove="Images\Document\时间\估算活动持续时间.png" />
+    <None Remove="Images\Document\时间\估算活动资源.png" />
+    <None Remove="Images\Document\时间\制定计划.png" />
+    <None Remove="Images\Document\时间\制定进度计划.png" />
+    <None Remove="Images\Document\时间\定义活动.png" />
+    <None Remove="Images\Document\时间\排列方法对比.png" />
+    <None Remove="Images\Document\时间\排列活动顺序.png" />
+    <None Remove="Images\Document\时间\控制进度.png" />
+    <None Remove="Images\Document\时间\规划进度管理.png" />
+    <None Remove="Images\Document\沟通\控制沟通.png" />
+    <None Remove="Images\Document\沟通\管理沟通.png" />
+    <None Remove="Images\Document\沟通\规划沟通管理.png" />
+    <None Remove="Images\Document\范围\创建wbs.png" />
+    <None Remove="Images\Document\范围\定义范围.png" />
+    <None Remove="Images\Document\范围\控制范围.png" />
+    <None Remove="Images\Document\范围\收集需求.png" />
+    <None Remove="Images\Document\范围\确认范围.png" />
+    <None Remove="Images\Document\范围\规划范围管理.png" />
+    <None Remove="Images\Document\质量\一致性成本.png" />
+    <None Remove="Images\Document\质量\实施质量保证.png" />
+    <None Remove="Images\Document\质量\控制质量.png" />
+    <None Remove="Images\Document\质量\规划质量管理.png" />
+    <None Remove="Images\Document\采购\实施采购.png" />
+    <None Remove="Images\Document\采购\控制采购.png" />
+    <None Remove="Images\Document\采购\结束采购.png" />
+    <None Remove="Images\Document\采购\规划采购管理.png" />
+    <None Remove="Images\Document\采购\采购主要工作.png" />
+    <None Remove="Images\Document\采购\集中合同管理.png" />
+    <None Remove="Images\login.png" />
+    <None Remove="Images\user.png" />
+    <None Remove="Images\监控过程总体流程.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Document\general\zhegn2.png" />
+    <Resource Include="Images\Document\general\zheng1.png" />
+    <Resource Include="Images\Document\general\zheng3.png" />
+    <Resource Include="Images\Document\general\zheng4.png" />
+    <Resource Include="Images\Document\general\zheng5.png" />
+    <Resource Include="Images\Document\变更审批.png" />
+    <Resource Include="Images\Document\干系人\控制干系人参与.png" />
+    <Resource Include="Images\Document\干系人\管理干系人参与.png" />
+    <Resource Include="Images\Document\干系人\规划干系人管理.png" />
+    <Resource Include="Images\Document\干系人\识别干系人.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Document\dingyi\10001.png" />
+    <Resource Include="Images\Document\dingyi\10002.png" />
+    <Resource Include="Images\Document\dingyi\10003.png" />
+    <Resource Include="Images\Document\dingyi\10004.png" />
+    <Resource Include="Images\Document\dingyi\10005.png" />
+    <Resource Include="Images\Document\fengxian\实施定性3.png" />
+    <Resource Include="Images\Document\fengxian\实施定量4.png" />
+    <Resource Include="Images\Document\fengxian\控制风险6.png" />
+    <Resource Include="Images\Document\fengxian\规划1.png" />
+    <Resource Include="Images\Document\fengxian\规划应对5.png" />
+    <Resource Include="Images\Document\fengxian\识别风险2.png" />
+    <Resource Include="Images\Document\general\san1.png" />
+    <Resource Include="Images\Document\general\san2.png" />
+    <Resource Include="Images\Document\general\wang2.png" />
+    <Resource Include="Images\Document\general\wang3.png" />
+    <Resource Include="Images\Document\general\wang4.png" />
+    <Resource Include="Images\Document\general\wangluo1.png" />
+    <Resource Include="Images\Document\人力\建设项目团队.png" />
+    <Resource Include="Images\Document\人力\管理项目团队.png" />
+    <Resource Include="Images\Document\人力\组建项目团队.png" />
+    <Resource Include="Images\Document\人力\规划人力资源管理.png" />
+    <Resource Include="Images\Document\成本\估算成本.png" />
+    <Resource Include="Images\Document\成本\制定预算.png" />
+    <Resource Include="Images\Document\成本\挣值管理.png" />
+    <Resource Include="Images\Document\成本\控制成本.png" />
+    <Resource Include="Images\Document\成本\规划成本管理.png" />
+    <Resource Include="Images\Document\时间\估算活动持续时间.png" />
+    <Resource Include="Images\Document\时间\估算活动资源.png" />
+    <Resource Include="Images\Document\时间\制定计划.png" />
+    <Resource Include="Images\Document\时间\制定进度计划.png" />
+    <Resource Include="Images\Document\时间\定义活动.png" />
+    <Resource Include="Images\Document\时间\排列方法对比.png" />
+    <Resource Include="Images\Document\时间\排列活动顺序.png" />
+    <Resource Include="Images\Document\时间\控制进度.png" />
+    <Resource Include="Images\Document\时间\规划进度管理.png" />
+    <Resource Include="Images\Document\沟通\控制沟通.png" />
+    <Resource Include="Images\Document\沟通\管理沟通.png" />
+    <Resource Include="Images\Document\沟通\规划沟通管理.png" />
+    <Resource Include="Images\Document\范围\创建wbs.png" />
+    <Resource Include="Images\Document\范围\定义范围.png" />
+    <Resource Include="Images\Document\范围\控制范围.png" />
+    <Resource Include="Images\Document\范围\收集需求.png" />
+    <Resource Include="Images\Document\范围\确认范围.png" />
+    <Resource Include="Images\Document\范围\规划范围管理.png" />
+    <Resource Include="Images\Document\质量\一致性成本.png" />
+    <Resource Include="Images\Document\质量\实施质量保证.png" />
+    <Resource Include="Images\Document\质量\控制质量.png" />
+    <Resource Include="Images\Document\质量\规划质量管理.png" />
+    <Resource Include="Images\Document\采购\实施采购.png" />
+    <Resource Include="Images\Document\采购\控制采购.png" />
+    <Resource Include="Images\Document\采购\结束采购.png" />
+    <Resource Include="Images\Document\采购\规划采购管理.png" />
+    <Resource Include="Images\Document\采购\采购主要工作.png" />
+    <Resource Include="Images\Document\采购\集中合同管理.png" />
+    <Resource Include="Images\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Aga.Diagrams.TestExtend" Version="1.2.0" />
+    <PackageReference Include="DlhSoft.GanttChartLightLibrary" Version="4.3.48.14" />
+    <PackageReference Include="MahApps.Metro" Version="2.4.10" />
+    <PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Prism.DryIoc" Version="8.1.97" />
+    <PackageReference Include="RestSharp" Version="106.15.0" />
+    <PackageReference Include="Syncfusion.Gantt.WPF" Version="26.2.9" />
+    <PackageReference Include="Syncfusion.UI.WPF.NET" Version="26.2.10" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\user.png" />
+    <Resource Include="Images\Document\监控过程总体流程.png" />
+  </ItemGroup>
+</Project>

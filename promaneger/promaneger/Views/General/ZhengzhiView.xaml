@@ -1,0 +1,78 @@
+﻿<UserControl
+    x:Class="promaneger.Views.General.ZhengzhiView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:promaneger.Views.General"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <Grid>
+        <FlowDocumentScrollViewer DockPanel.Dock="Top">
+            <FlowDocument Foreground="{DynamicResource MahApps.Brushes.Text}" 
+                      FontFamily="{DynamicResource MahApps.Fonts.Family.Control}"
+                      FontSize="14"
+                      LineHeight="20">
+
+                <Paragraph>
+
+                    <Bold>挣值管理</Bold>
+                    <LineBreak />
+                    学习挣值管理，必须掌握以下基本概念：
+                    <LineBreak />
+                    ·计划价值（PlannedValue，PV）。
+                    <LineBreak /> 截至某时点计划要完成的工作的价值，是计划完成工作的预算价值，可以表示为：计划价值= 计划要完成的工作量×预算单价。
+                    <LineBreak />
+                    <LineBreak /> ·挣值（EarnedValue，EV）。
+                    <LineBreak /> 截至某时点实际已经完成的工作的预算价值，是实际已完工作的预算价值，可以表示为：挣值= 实际已完成的工作量×预算单价。
+                    <LineBreak />
+                    <LineBreak />
+                    ·实际成本（ActualCost AC）。截至某时点实际已经发生的成本，是实际已完成工作的实际成本，应该可以在项目的成本账上查到，可以表示为：实际成本= 实际已完成的工作量? 实际单价。
+                    <LineBreak />
+                    <LineBreak /> ·完工预算（BudgetAtCompletion，BAC）。
+                    <LineBreak /> 整个项目的成本基准，除非已批准进行变更，完工预算不会变化。
+                    如果是针对工作分解结构中的某个要素来计算挣值，那么就是该要素的成本基准。
+在上述四个基本概念的基础上，就可以计算挣值管理中的相关绩效指标。
+                    <LineBreak />
+                    <LineBreak />
+                    计划价值、挣值、实际成本和完工预算是挣值管理中最基本的概念。
+                    <LineBreak />
+                    <LineBreak />
+                    在挣值管理中，既可以计算某个时段（报告期）的挣值指标，也可以计算从开工截至目前的累计挣值指标，如挣值、计划价值、实际成本、成本偏差、进度偏差、成本绩效指数和进度绩效指数。
+                    <LineBreak />
+                    <LineBreak />
+                    在挣值管理中，既可以针对整个项目计算各种挣值指标，也可以针对某些工作分解
+结构要素（如控制账户）计算各种挣值指标。应该事先规定将针对工作分解结构中的哪
+些要素计算各种挣值指标。至少要针对控制账户计算。
+                    <LineBreak />
+                    <LineBreak />
+                    为了连续动态地跟踪项目进展情况，应该规定计算各种挣值指标的时间间隔，如每个月计算一次
+                    <LineBreak />
+                    <Bold>计算案例和结果以及实例计算如下</Bold>
+
+                    <Figure Width="200" HorizontalAnchor="ColumnRight" VerticalAnchor="ContentCenter">
+                        
+                    </Figure>
+                </Paragraph>
+<BlockUIContainer>
+                            <Image Source="/Images/Document/general/zheng1.png" Width="600" Height="400"></Image>
+                        </BlockUIContainer>
+                <BlockUIContainer>
+                    <Image Source="/Images/Document/general/zhegn2.png" Width="600" Height="400"></Image>
+                </BlockUIContainer>
+                <BlockUIContainer>
+                    <Image Source="/Images/Document/general/zheng3.png" Width="600" Height="400"></Image>
+                </BlockUIContainer>
+                <BlockUIContainer>
+                    <Image Source="/Images/Document/general/zheng4.png" Width="600" Height="400"></Image>
+                </BlockUIContainer>
+                <BlockUIContainer>
+                    <Image Source="/Images/Document/general/zheng5.png" Width="600" Height="400"></Image>
+                </BlockUIContainer>
+
+
+            </FlowDocument>
+        </FlowDocumentScrollViewer>
+    </Grid>
+</UserControl>

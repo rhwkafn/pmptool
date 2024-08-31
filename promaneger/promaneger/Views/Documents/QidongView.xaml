@@ -1,0 +1,821 @@
+﻿<UserControl
+    x:Class="promaneger.Views.Documents.QidongView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:promaneger.Views.Documents"
+    xmlns:local1="clr-namespace:promaneger.DTOs"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+
+
+        <!--  左侧导航条  -->
+        <StackPanel Grid.Column="0" Margin="10">
+            <TreeView x:Name="treeView" SelectedItemChanged="treeView_SelectedItemChanged_1">
+                <TreeViewItem Header="快速操作">
+                    <TreeViewItem Header="快速开始" />
+                    <!--<TreeViewItem Header="快速导入到项目和事项" />-->
+                </TreeViewItem>
+                <TreeViewItem Header="管理方案">
+                    <TreeViewItem Header="基本介绍" />
+                    <TreeViewItem Header="项目整合管理">
+                        <TreeViewItem Header="制定项目章程" />
+                    </TreeViewItem>
+                    <!--<TreeViewItem Header="项目范围管理">
+                        <TreeViewItem Header="规划范围管理" />
+                        <TreeViewItem Header="收集需求" />
+                        <TreeViewItem Header="定义范围" />
+                        <TreeViewItem Header="创建WBS" />
+                    </TreeViewItem>
+                    <TreeViewItem Header="项目时间管理">
+                        <TreeViewItem Header="规划进度管理" />
+                        <TreeViewItem Header="定义活动" />
+                        <TreeViewItem Header="排列活动顺序" />
+                        <TreeViewItem Header="估算活动资源" />
+                        <TreeViewItem Header="估算活动持续时间" />
+                        <TreeViewItem Header="制定进度计划" />
+                    </TreeViewItem>
+                    <TreeViewItem Header="项目成本管理">
+                        <TreeViewItem Header="规划成本管理" />
+                        <TreeViewItem Header="估算成本" />
+                        <TreeViewItem Header="制定预算" />
+                    </TreeViewItem>
+                    <TreeViewItem Header="项目质量管理">
+                        <TreeViewItem Header="规划质量管理" />
+                    </TreeViewItem>
+                    <TreeViewItem Header="项目人力资源管理">
+                        <TreeViewItem Header="规划人力资源管理" />
+                    </TreeViewItem>
+                    <TreeViewItem Header="项目沟通管理">
+                        <TreeViewItem Header="规划沟通管理" />
+                    </TreeViewItem>
+                    <TreeViewItem Header="项目风险管理">
+                        <TreeViewItem Header="规划风险管理" />
+                        <TreeViewItem Header="识别风险" />
+                        <TreeViewItem Header="实施定性风险分析" />
+                        <TreeViewItem Header="实施定量风险分析" />
+                        <TreeViewItem Header="规划风险应对" />
+                    </TreeViewItem>
+                    <TreeViewItem Header="项目采购管理">
+                        <TreeViewItem Header="规划采购管理" />
+                    </TreeViewItem>-->
+                    <TreeViewItem Header="项目干系人管理">
+                        <TreeViewItem Header="识别干系人" />
+                    </TreeViewItem>
+                </TreeViewItem>
+                <TreeViewItem Header="数据模板" />
+                <TreeViewItem Header="问题" />
+                <TreeViewItem Header="展示全部" />
+            </TreeView>
+        </StackPanel>
+        <!--  显示部分  -->
+        <ScrollViewer
+            Grid.Column="1"
+            HorizontalAlignment="Stretch"
+            HorizontalScrollBarVisibility="Auto"
+            VerticalScrollBarVisibility="Visible">
+            <StackPanel Grid.Column="1" Orientation="Vertical">
+
+                <!--  快速操作  -->
+                <Expander x:Name="KuaiSuCaoZuo" Header="快速操作">
+
+
+                    <FlowDocumentScrollViewer HorizontalAlignment="Left">
+                        <FlowDocument
+                            FontFamily="{DynamicResource MahApps.Fonts.Family.Control}"
+                            FontSize="14"
+                            Foreground="{DynamicResource MahApps.Brushes.Text}"
+                            LineHeight="20"
+                            PagePadding="20"
+                            TextAlignment="Left">
+                            <Paragraph>
+                                <Bold />
+                                <Run FontSize="20" FontWeight="Bold">注意事项</Run>
+                                <LineBreak />
+                                <Run FontSize="14">
+                                    1. 在正式进入启动过程组之前，项目发起人需要组织专家完成项目的前期准备工作，编写出相应的商业文件（如商业论证报告），签妥发起项目的合作协议。
+                                    在启动过程组，用项目章程宣布项目正式立项。为了尽早与项目干系人打交道，还应该
+                                    在启动过程组编制干系人登记册。干系人登记册，将不断调整和完善。
+                                </Run>
+                                <LineBreak />
+                            </Paragraph>
+
+                            <Paragraph>
+                                <Run FontSize="20" FontWeight="Bold">快速开始</Run>
+                                <LineBreak />
+                                <Run FontSize="14">本文档提供了PMP项目管理5个过程组和十大知识领域的介绍，后续将逐渐完善知识体系等内容。</Run>
+                                <LineBreak />
+                                <Run FontSize="14">本文档可上边导航栏中切换查看内容，方便您更查阅和使用。</Run>
+                                <LineBreak />
+                                <Run FontSize="14">本文档从过程组的形式展开管理，清晰化每个过程组所需做的内容。</Run>
+                                <LineBreak />
+                                <LineBreak />
+                                <Run FontSize="16" FontWeight="Bold">1、5大过程</Run>
+                                <LineBreak />
+                                
+                                <Figure HorizontalAnchor="ColumnLeft" VerticalAnchor="ContentCenter">
+                                    <BlockUIContainer>
+                                        <Image
+                                            Width="500px"
+                                            Height="350px"
+                                            Source="/Images/Document/dingyi/10002.png" />
+                                    </BlockUIContainer>
+                                </Figure>
+                            </Paragraph>
+
+
+
+
+                            <BlockUIContainer>
+                                <Image
+                                    Width="500px"
+Height="350px"
+                                    Source="/Images/Document/dingyi/10001.png" />
+                            </BlockUIContainer>
+
+                            <Paragraph>
+                                <Run FontSize="16" FontWeight="Bold">2、5大过程生命周期</Run>
+                                <LineBreak /></Paragraph>
+                            <BlockUIContainer>
+                                <Image
+                                    Width="500px"
+Height="350px"
+                                    Source="/Images/Document/dingyi/10003.png" />
+                            </BlockUIContainer>
+
+
+                            <Paragraph>
+                                <Run FontSize="16" FontWeight="Bold">3、十大知识领域</Run>
+                                <LineBreak />
+                            </Paragraph>
+                            <BlockUIContainer>
+                                <Image
+                                    Width="500px"
+Height="650px"
+                                    Source="/Images/Document/dingyi/10005.png" />
+                            </BlockUIContainer>
+
+
+                            <Paragraph>
+                                <Run FontSize="16" FontWeight="Bold">4、全流程</Run>
+                                <LineBreak />
+                            </Paragraph>
+                            <BlockUIContainer>
+                                <Image
+                                    Width="500px"
+Height="350px"
+                                    Source="/Images/Document/dingyi/10004.png" />
+                            </BlockUIContainer>
+
+
+
+
+
+
+                        </FlowDocument>
+                    </FlowDocumentScrollViewer>
+
+
+
+
+
+                </Expander>
+
+                <!--  基本介绍  -->
+                <Expander x:Name="GuanLiFangAn" Header="基本介绍">
+                    <FlowDocumentScrollViewer HorizontalAlignment="Left">
+                        <FlowDocument>
+
+
+
+                            <Paragraph>
+                                <Run FontSize="16" FontWeight="Bold">启动过程组：获得授权，定义一个新项目或现有项目的一个新阶段，正式开始该项目或阶段的一组过程。</Run>
+                                <LineBreak />
+                            </Paragraph>
+                        </FlowDocument>
+                    </FlowDocumentScrollViewer>
+
+                </Expander>
+                <Expander x:Name="expanderXiangMuZhengHeGuanLi" Header="项目整合管理">
+
+
+                    <FlowDocumentScrollViewer HorizontalAlignment="Left">
+
+
+                        <FlowDocument
+                            FontFamily="{DynamicResource MahApps.Fonts.Family.Control}"
+                            FontSize="14"
+                            Foreground="{DynamicResource MahApps.Brushes.Text}"
+                            LineHeight="20"
+                            PagePadding="20"
+                            TextAlignment="Left">
+                            <Paragraph Margin="10">
+                                <Bold />
+                                <Bold>流程1：制定项目章程</Bold>
+                                <LineBreak />
+                                仅开展一次或仅在预定义时点开展的项目管理过程。<LineBreak />
+                                说明：以便正式启动已经选定的某个项目，确立该项目在组织中的合法地位，授权项目经理动用组织资源开展项目工作。<LineBreak />
+                                <LineBreak />
+                                <Bold>1、项目的前期准备</Bold>
+                                <LineBreak />
+                                前期准备工作，包括项目发起人提出项目的初步设想，聘请专家团队对项目开展商业论证（形成商业论证报告和效益管理计划），以及与相关机构签署关于发起项目的合作协议。
+                                前期准备工作的主要目的是，落实项目的可行性，落实项目所需资金。<LineBreak />
+                                <LineBreak />
+                                <Bold>2、项目启动</Bold>
+                                <LineBreak />
+                                通常，发起人会亲自领导整个启动阶段，直至项目章程发布。项目章程发布之后，就由项目经理来领导项目。
+                                在项目启动阶段，发起人授权候任项目经理开展以下主要工作：<LineBreak />
+                                <LineBreak />
+                                ·开展项目评估。<LineBreak />
+                                <Bold>·识别高层级的可交付成果。</Bold>
+                                <LineBreak />
+                                <Bold>·确定高层级的进度和成本要求。</Bold>
+                                搞清楚主要的进度里程碑以及大概需要多少资金。<LineBreak />
+                                <Bold>·确定整体项目风险的级别及其主要来源。</Bold>
+                                <LineBreak />
+                                <Bold>·识别主要的假设条件和制约因素。</Bold>
+                                <LineBreak />
+                                <Bold>·识别和分析项目的主要干系人。</Bold>
+                                <LineBreak />
+                                <Bold>·编制项目章程，获得发起人对项目章程的批准，并分发项目章程。</Bold>
+                                <LineBreak />
+                                <LineBreak />
+                                <Bold>3、项目章程</Bold>
+                                “宪法”，实用性，专业性，凝练性，<LineBreak />
+                                项目章程必须由项目发起人或高级管理层签署，并发布给主要的项目干系人，以便各干系人都知道项目已经正式启动，
+                                都了解项目的主要目标，都了解各自在项目上的角色和职责。<LineBreak />
+                                <LineBreak />
+                                项目发起人通常召开项目启动会议来发布项目章程，宣布项目经理的任命，宣告项目正式启动。</Paragraph>
+                        </FlowDocument>
+
+                    </FlowDocumentScrollViewer>
+
+
+
+
+                </Expander>
+
+                <Expander x:Name="expanderXiangMuGanXianRenGuanLi" Header="项目干系人管理">
+
+
+                    <FlowDocumentScrollViewer HorizontalAlignment="Left">
+
+
+                        <FlowDocument
+                            FontFamily="{DynamicResource MahApps.Fonts.Family.Control}"
+                            FontSize="14"
+                            Foreground="{DynamicResource MahApps.Brushes.Text}"
+                            LineHeight="20"
+                            PagePadding="20"
+                            TextAlignment="Left">
+                            <Paragraph>
+
+                                <Run FontSize="20" FontWeight="Bold">流程1：识别干系人</Run>
+                                <LineBreak />
+                                <Run FontSize="14">需要定期开展的过程。</Run>
+                                <LineBreak />
+                                <LineBreak />
+                                <Run FontSize="16" FontWeight="Bold">1、主要项目干系人</Run>
+                                <LineBreak />
+                                <Run FontSize="14">项目发起人是为项目提供资金和其他重要资源的人。</Run>
+                                <LineBreak />
+                                <LineBreak />
+                                <Run FontSize="14">高级管理层是项目执行组织中高于项目经理的全体管理者的集合。</Run>
+                                <LineBreak />
+                                <Run FontSize="14">如果由一个组织发起，交给另一个组织去执行，那么发起人与高级管理层就是分开的。</Run>
+                                <LineBreak />
+                                <Run FontSize="14">在这种情况下，项目发起组织与执行组织之间签署合作协议，在协议中授权执行组织的高级管理层签发项目章程，授权执行组织聘任项目经理、组建项目团队去开展项目执行。</Run>
+                                <LineBreak />
+                                <LineBreak />
+                                <Run FontSize="14">客户是项目成果的使用者，既包括直接使用者，也包括间接使用者。</Run>
+                                <LineBreak />
+                                <Run FontSize="14">应该以最终端客户的利益至上。</Run>
+                                <LineBreak />
+                                <LineBreak />
+                                <Run FontSize="14">项目发起人或高级管理层应该尽早指定项目经理。</Run>
+                                <LineBreak />
+                                <Run FontSize="14">一般应在项目启动阶段指定，以便项目经理参与项目章程的编写，甚至在获得授权后，主持项目章程的编写。</Run>
+                                <LineBreak />
+                                <LineBreak />
+                                <Run FontSize="14">职能部门通常是项目所需的专业技术和专业人才的蓄水池。</Run>
+                                <LineBreak />
+                                <Run FontSize="14">职能经理在项目上的具体作用取决于项目所用的组织形式。</Run>
+                                <LineBreak />
+                                <Run FontSize="14">在矩阵式组织中，职能经理和项目经理共同指挥项目成员的工作；在项目式组织中，职能经理不参与指挥；而在职能式组织中，通过合同为项目提供货物、服务或其他成果的人，就是卖方。</Run>
+                                <LineBreak />
+                                <Run FontSize="14">主要由职能经理来指挥。</Run>
+                                <LineBreak />
+                                <LineBreak />
+                                <Run FontSize="16" FontWeight="Bold">2、不仅要了解干系人的基本情况</Run>
+                                <LineBreak />
+                                <Run FontSize="14">如名称、联系方式；而且要认真分析干系人对项目的要求与期望、可能对项目施加的影响、与哪个阶段的关系最密切，要特别注意干系人对项目的不同甚至冲突的要求；还要根据相关标准，对干系人进行分类。</Run>
+                                <LineBreak />
+                                <Run FontSize="14">这些内容都要写入干系人登记册。</Run>
+                                <LineBreak />
+                                <Run FontSize="14">干系人登记册需要在整个项目生命周期中定期更新。</Run>
+                                <LineBreak />
+                                <LineBreak />
+                                <Run FontSize="16" FontWeight="Bold">3、数据收集</Run>
+                                <LineBreak />
+                                <Run FontSize="14">问卷，调查，数据分析，文件分析，干系人分析，数据表现，权力利益方格，权力影响方格，影响作用方格。</Run>
+
+                            </Paragraph>
+
+                        </FlowDocument>
+
+                    </FlowDocumentScrollViewer>
+
+                </Expander>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <!--  数据模板  -->
+                <Expander x:Name="expanderShuJuMoBan" Header="数据模板">
+                    <StackPanel>
+                        <TextBlock
+                            Margin="0,10"
+                            HorizontalAlignment="Center"
+                            FontSize="20"
+                            FontWeight="Bold"
+                            Text="项 目 章 程" />
+
+                        <Grid Margin="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="2*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <TextBlock
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Margin="5"
+                                Text="项目名称：" />
+                            <TextBox
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                Margin="5" />
+
+                            <TextBlock
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Margin="5"
+                                Text="项目发起人：" />
+                            <TextBox
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Margin="5" />
+
+                            <TextBlock
+                                Grid.Row="2"
+                                Grid.Column="0"
+                                Margin="5"
+                                Text="准备日期：" />
+                            <TextBox
+                                Grid.Row="2"
+                                Grid.Column="1"
+                                Margin="5" />
+
+                            <TextBlock
+                                Grid.Row="3"
+                                Grid.Column="0"
+                                Margin="5"
+                                Text="项目经理：" />
+                            <TextBox
+                                Grid.Row="3"
+                                Grid.Column="1"
+                                Margin="5" />
+
+                            <TextBlock
+                                Grid.Row="4"
+                                Grid.Column="0"
+                                Margin="5"
+                                Text="项目客户：" />
+                            <TextBox
+                                Grid.Row="4"
+                                Grid.Column="1"
+                                Margin="5" />
+
+                            <TextBlock
+                                Grid.Row="5"
+                                Grid.Column="0"
+                                Margin="5"
+                                Text="项目目的或理由：" />
+                            <TextBox
+                                Grid.Row="5"
+                                Grid.Column="1"
+                                Margin="5" />
+
+                            <TextBlock
+                                Grid.Row="6"
+                                Grid.Column="0"
+                                Margin="5"
+                                Text="项目描述：" />
+                            <TextBox
+                                Grid.Row="6"
+                                Grid.Column="1"
+                                Margin="5" />
+                        </Grid>
+
+                        <TextBlock Margin="10,5" Text="高水平项目和产品需求：" />
+                        <TextBox Margin="10,5" />
+
+                        <TextBlock Margin="10,5" Text="总预算：" />
+                        <TextBox Margin="10,5" />
+
+                        <TextBlock Margin="10,5" Text="启动风险：" />
+                        <TextBox Margin="10,5" />
+
+                        <TextBlock
+                            Margin="10"
+                            HorizontalAlignment="Right"
+                            Text="第1页/共3页" />
+
+                        <TextBlock
+                            Margin="0,10"
+                            HorizontalAlignment="Center"
+                            FontSize="20"
+                            FontWeight="Bold"
+                            Text="项 目 章 程" />
+
+                        <Grid Margin="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="2*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <TextBlock
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Margin="5"
+                                Text="里程碑总表" />
+                            <TextBlock
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                Margin="5"
+                                Text="到 期 日" />
+
+                            <!--  Repeat for each milestone  -->
+                            <TextBox
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Margin="5" />
+                            <TextBox
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Margin="5" />
+
+                            <TextBox
+                                Grid.Row="2"
+                                Grid.Column="0"
+                                Margin="5" />
+                            <TextBox
+                                Grid.Row="2"
+                                Grid.Column="1"
+                                Margin="5" />
+
+                            <!--  Add more rows as needed  -->
+                        </Grid>
+
+                        <Grid Margin="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <TextBlock
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Margin="5"
+                                Text="项目目标" />
+                            <TextBlock
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                Margin="5"
+                                Text="成功标准" />
+                            <TextBlock
+                                Grid.Row="0"
+                                Grid.Column="2"
+                                Margin="5"
+                                Text="批准人" />
+
+                            <TextBlock
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Margin="5"
+                                Text="范围：" />
+                            <TextBox
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Margin="5" />
+                            <TextBox
+                                Grid.Row="1"
+                                Grid.Column="2"
+                                Margin="5" />
+
+                            <TextBlock
+                                Grid.Row="2"
+                                Grid.Column="0"
+                                Margin="5"
+                                Text="时间：" />
+                            <TextBox
+                                Grid.Row="2"
+                                Grid.Column="1"
+                                Margin="5" />
+                            <TextBox
+                                Grid.Row="2"
+                                Grid.Column="2"
+                                Margin="5" />
+
+                            <TextBlock
+                                Grid.Row="3"
+                                Grid.Column="0"
+                                Margin="5"
+                                Text="成本：" />
+                            <TextBox
+                                Grid.Row="3"
+                                Grid.Column="1"
+                                Margin="5" />
+                            <TextBox
+                                Grid.Row="3"
+                                Grid.Column="2"
+                                Margin="5" />
+
+                            <TextBlock
+                                Grid.Row="4"
+                                Grid.Column="0"
+                                Margin="5"
+                                Text="质量：" />
+                            <TextBox
+                                Grid.Row="4"
+                                Grid.Column="1"
+                                Margin="5" />
+                            <TextBox
+                                Grid.Row="4"
+                                Grid.Column="2"
+                                Margin="5" />
+
+                            <TextBlock
+                                Grid.Row="5"
+                                Grid.Column="0"
+                                Margin="5"
+                                Text="其他：" />
+                            <TextBox
+                                Grid.Row="5"
+                                Grid.Column="1"
+                                Margin="5" />
+                            <TextBox
+                                Grid.Row="5"
+                                Grid.Column="2"
+                                Margin="5" />
+                        </Grid>
+
+                        <TextBlock
+                            Margin="10"
+                            HorizontalAlignment="Right"
+                            Text="第2页/共3页" />
+
+                        <TextBlock
+                            Margin="0,10"
+                            HorizontalAlignment="Center"
+                            FontSize="20"
+                            FontWeight="Bold"
+                            Text="项 目 章 程" />
+
+                        <TextBlock Margin="10,5" Text="验收标准：" />
+                        <TextBox Margin="10,5" />
+
+                        <TextBlock
+                            Margin="10,5"
+                            FontWeight="Bold"
+                            Text="项目经理职权层级" />
+
+                        <TextBlock Margin="10,5" Text="人员配备决策：" />
+                        <TextBox Margin="10,5" />
+
+                        <TextBlock Margin="10,5" Text="预算管理和偏差：" />
+                        <TextBox Margin="10,5" />
+
+                        <TextBlock Margin="10,5" Text="技术决策：" />
+                        <TextBox Margin="10,5" />
+
+                        <TextBlock Margin="10,5" Text="冲突解决：" />
+                        <TextBox Margin="10,5" />
+
+                        <TextBlock Margin="10,5" Text="超出职权范围的申请途径：" />
+                        <TextBox Margin="10,5" />
+
+                        <Grid Margin="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <TextBlock
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Margin="5"
+                                Text="批准：" />
+
+                            <StackPanel
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Margin="5"
+                                Orientation="Horizontal">
+                                <TextBlock Margin="5" Text="项目经理签字" />
+                                <TextBox Width="200" Margin="5" />
+                            </StackPanel>
+
+                            <StackPanel
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Margin="5"
+                                Orientation="Horizontal">
+                                <TextBlock Margin="5" Text="发起人或委托人签字" />
+                                <TextBox Width="200" Margin="5" />
+                            </StackPanel>
+
+                            <StackPanel
+                                Grid.Row="2"
+                                Grid.Column="0"
+                                Margin="5"
+                                Orientation="Horizontal">
+                                <TextBlock Margin="5" Text="项目经理姓名" />
+                                <TextBox Width="200" Margin="5" />
+                            </StackPanel>
+
+                            <StackPanel
+                                Grid.Row="2"
+                                Grid.Column="1"
+                                Margin="5"
+                                Orientation="Horizontal">
+                                <TextBlock Margin="5" Text="发起人或委托人姓名" />
+                                <TextBox Width="200" Margin="5" />
+                            </StackPanel>
+                        </Grid>
+
+                        <TextBlock
+                            Margin="10"
+                            HorizontalAlignment="Right"
+                            Text="第3页/共3页" />
+
+                        <DataGrid
+                            Margin="20,10"
+                            AutoGenerateColumns="False"
+                            DockPanel.Dock="Bottom"
+                            ItemsSource="{Binding Tasks}">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Binding="{Binding Title}" Header="任务标题" />
+                                <DataGridTextColumn Binding="{Binding Description}" Header="任务描述" />
+                                <DataGridTextColumn Binding="{Binding Status}" Header="任务状态" />
+                                <DataGridTextColumn Binding="{Binding StarttaskDate}" Header="开始日期" />
+                                <DataGridTextColumn Binding="{Binding EndtaskDate}" Header="截止日期" />
+                                <DataGridTextColumn Binding="{Binding ProjectTitle}" Header="所属项目ID" />
+                            </DataGrid.Columns>
+
+                            <DataGrid.Items>
+                                <local1:TasksDTO
+                                    Title="任务一"
+                                    Description="这是任务一的描述"
+                                    EndtaskDate="2023-11-20"
+                                    ProjectTitle="项目A"
+                                    StarttaskDate="2023-11-11" />
+                                <local1:TasksDTO
+                                    Title="任务二"
+                                    Description="这是任务二的描述"
+                                    EndtaskDate="2023-11-25"
+                                    ProjectTitle="项目B"
+                                    StarttaskDate="2023-11-15" />
+                            </DataGrid.Items>
+
+                        </DataGrid>
+
+                        <DataGrid AutoGenerateColumns="False">
+                            <DataGrid.Columns>
+                                <DataGridTemplateColumn Header="任务标题">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Title, Mode=TwoWay}" />
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+
+                            <DataGrid.Items>
+                                <local1:TasksDTO
+                                    Title="任务一"
+                                    Description="这是任务一的描述"
+                                    EndtaskDate="2023-11-20"
+                                    ProjectTitle="项目A"
+                                    StarttaskDate="2023-11-11" />
+                                <local1:TasksDTO
+                                    Title="任务二"
+                                    Description="这是任务二的描述"
+                                    EndtaskDate="2023-11-25"
+                                    ProjectTitle="项目B"
+                                    StarttaskDate="2023-11-15" />
+                            </DataGrid.Items>
+
+                        </DataGrid>
+                    </StackPanel>
+                </Expander>
+
+                <!--  问题  -->
+                <Expander x:Name="expanderWenTi" Header="问题">
+                    <FlowDocumentScrollViewer HorizontalAlignment="Left">
+                        <FlowDocument
+                            FontFamily="{DynamicResource MahApps.Fonts.Family.Control}"
+                            FontSize="14"
+                            Foreground="{DynamicResource MahApps.Brushes.Text}"
+                            LineHeight="20"
+                            PagePadding="20"
+                            TextAlignment="Left">
+                            <Paragraph>
+                                <Run FontSize="20" FontWeight="Bold">注意事项</Run>
+                                <LineBreak />
+                                <Run FontSize="14">
+                                    1. 在正式进入启动过程组之前，项目发起人需要组织专家完成项目的前期准备工作，编写出相应的商业文件（如商业论证报告），签妥发起项目的合作协议。
+                                    在启动过程组，用项目章程宣布项目正式立项。为了尽早与项目干系人打交道，还应该
+                                    在启动过程组编制干系人登记册。干系人登记册，将不断调整和完善。
+                                </Run>
+                                <LineBreak /></Paragraph>
+                        </FlowDocument>
+                    </FlowDocumentScrollViewer>
+
+                </Expander>
+
+
+
+
+            </StackPanel>
+        </ScrollViewer>
+
+
+
+    </Grid>
+
+</UserControl>
+
+
+

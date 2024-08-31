@@ -1,0 +1,573 @@
+﻿<UserControl
+    x:Class="promaneger.Views.Documents.ZhixingView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:promaneger.Views.Documents"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+
+
+        <!--  左侧导航条  -->
+        <StackPanel Grid.Column="0" Margin="10">
+            <TreeView x:Name="treeView" SelectedItemChanged="treeView_SelectedItemChanged_1">
+                <TreeViewItem Header="快速操作">
+                    <TreeViewItem Header="快速开始" />
+                    <!--<TreeViewItem Header="快速导入到项目和事项" />-->
+                </TreeViewItem>
+                <TreeViewItem Header="管理方案">
+                    <TreeViewItem Header="基本介绍" />
+
+                    <TreeViewItem Header="项目整合管理">
+                        <TreeViewItem Header="流程1：指导与管理项目工作"/>
+                        <TreeViewItem Header="流程2：项自变更管理"/>
+                    </TreeViewItem>
+                    <TreeViewItem Header="项目质量管理">
+                        <TreeViewItem Header="流程1：实施质量保证"/>
+                    </TreeViewItem>
+                    <TreeViewItem Header="项目人力资源管理">
+                        <TreeViewItem Header="流程1：组建项目团队"/>
+                        <TreeViewItem Header="流程2：建设项目团队"/>
+                        <TreeViewItem Header="流程3：管理项目团队"/>
+                    </TreeViewItem>
+                    <TreeViewItem Header="项目沟通管理">
+                        <TreeViewItem Header="流程1：管理沟通"/>
+                    </TreeViewItem>
+                    <TreeViewItem Header="项目采购管理">
+                        <TreeViewItem Header="流程1：实施采购"/>
+                    </TreeViewItem>
+                    <TreeViewItem Header="项目干系人管理">
+                        <TreeViewItem Header="流程1：管理干系人参与"/>
+                    </TreeViewItem>
+                </TreeViewItem>
+                <TreeViewItem Header="数据模板" />
+                <TreeViewItem Header="问题" />
+                <TreeViewItem Header="展示全部" />
+            </TreeView>
+
+
+
+        </StackPanel>
+        <!--  显示部分  -->
+        <ScrollViewer
+            Grid.Column="1"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            HorizontalScrollBarVisibility="Hidden"
+            VerticalScrollBarVisibility="Visible">
+            <StackPanel Orientation="Vertical">
+
+                <!--  快速操作  -->
+                <Expander x:Name="KuaiSuCaoZuo" Header="快速操作">
+                    <FlowDocumentScrollViewer HorizontalAlignment="Left" Width="700">
+                        <FlowDocument
+                            FontFamily="{DynamicResource MahApps.Fonts.Family.Control}"
+                            FontSize="14"
+                            Foreground="{DynamicResource MahApps.Brushes.Text}"
+                            LineHeight="20"
+                            PagePadding="20"
+                            TextAlignment="Left">
+                            <Paragraph>
+                                <Bold />
+                                <Run FontSize="20" FontWeight="Bold">注意事项</Run>
+                                <LineBreak />
+                                <Run FontSize="14">
+                                    1. 在正式进入启动过程组之前，项目发起人需要组织专家完成项目的前期准备工作，编写出相应的商业文件（如商业论证报告），签妥发起项目的合作协议。
+                                    在启动过程组，用项目章程宣布项目正式立项。为了尽早与项目干系人打交道，还应该
+                                    在启动过程组编制干系人登记册。干系人登记册，将不断调整和完善。
+                                </Run>
+                                <LineBreak />
+                            </Paragraph>
+
+                            <Paragraph>
+                                <Run FontSize="20" FontWeight="Bold">快速开始</Run>
+                                <LineBreak />
+                                <Run FontSize="14">本文档提供了PMP项目管理5个过程组和十大知识领域的介绍，后续将逐渐完善知识体系等内容。</Run>
+                                <LineBreak />
+                                <Run FontSize="14">本文档可上边导航栏中切换查看内容，方便您更查阅和使用。</Run>
+                                <LineBreak />
+                                <Run FontSize="14">本文档从过程组的形式展开管理，清晰化每个过程组所需做的内容。</Run>
+                                <LineBreak />
+                                <LineBreak />
+                                <Run FontSize="16" FontWeight="Bold">1、5大过程</Run>
+                                <LineBreak />
+
+
+
+                            </Paragraph>
+
+
+
+
+
+                            <Paragraph>
+                                <Run FontSize="16" FontWeight="Bold">2、5大过程生命周期</Run>
+                                <LineBreak />
+                            </Paragraph>
+
+
+
+                            <Paragraph>
+                                <Run FontSize="16" FontWeight="Bold">3、十大知识领域</Run>
+                                <LineBreak />
+                            </Paragraph>
+
+
+                            <Paragraph>
+                                <Run FontSize="16" FontWeight="Bold">4、全流程</Run>
+                                <LineBreak />
+
+                                <Figure HorizontalAnchor="ColumnLeft" VerticalAnchor="ContentCenter">
+                                    <BlockUIContainer>
+                                        <Image
+Width="600"
+Height="500"
+Source="/Images/Document/dingyi/10005.png" />
+                                    </BlockUIContainer>
+                                </Figure>
+                            </Paragraph>
+
+
+
+
+
+
+
+                        </FlowDocument>
+                    </FlowDocumentScrollViewer>
+
+                </Expander>
+
+                <!--  基本介绍  -->
+                <Expander x:Name="GuanLiFangAn" Header="基本介绍">
+                    <TextBlock Text="执行过程组：完成项目管理计划中确定的工作以实现项目目标的一组过程。" />
+
+                </Expander>
+                
+                <Expander x:Name="expanderXiangMuZhengHeGuanLi" Header="项目整合管理">
+                    <FlowDocumentScrollViewer HorizontalAlignment="Left" Width="600">
+                        <FlowDocument
+                    FontFamily="{DynamicResource MahApps.Fonts.Family.Control}"
+                    FontSize="14" PagePadding="20" TextAlignment="Left" 
+                    Foreground="{DynamicResource MahApps.Brushes.Text}"
+                    LineHeight="20">
+                            <Paragraph>
+                                <Bold></Bold>
+                                <Run FontSize="16" FontWeight="Bold">项目整合管理</Run>
+                                    <LineBreak />
+                                    <Run FontSize="16" FontWeight="Bold">流程1：指导与管理项目工作</Run>
+                                    <LineBreak />
+                                    
+                                        需要持续开展的过程。
+                                <LineBreak />
+                                <LineBreak />
+                                项目执行阶段的开始通常以“开工会议”为标志。该会议是项目计划编制工作结束、执行工作开始时，由项目经理和项目发起人召集主要项目干系人参加的一个会议，以便向主要干系人介绍项目目标与项目计划，获得他们对项目的承诺与支持，并宣布项目正式进入执行阶段。开工会议相当于开工典礼。
+                                <LineBreak />
+                                <LineBreak />
+                                在项目中，管理项目知识，监控项目工作，实施整体变更控制。
+
+                                <LineBreak />
+                                <LineBreak />
+                                <Run FontSize="16" FontWeight="Bold">流程2：项目变更管理</Run>
+                                <LineBreak />
+                                <LineBreak />
+
+                                <Bold>1、变更概述：</Bold>
+                                <LineBreak /> 项目变更是指采取纠正措施、缺陷补救措施或预防措施，以及因计划本身的问题而修改已经批准的项目计划。
+                                <LineBreak />
+                                <LineBreak />
+                                范围缺陷是指产品功能不全，质量缺陷是指已有的功能不符合技术要求。如果预计未来的项目绩效达不到要求，就要采取预防措施。项目变更管理就是预防不必要的变更，并提出、评审、实施和总结必要的变更。
+                                <LineBreak />
+                                <LineBreak />
+                                注意：如果项目计划中存在较严重的缺陷甚至根本错误，就必须变更。
+                                        <LineBreak />
+                                        项目经理不仅应该为确保项目目标的实现而开展变更管理，而且应该协助项目集经理或其他高管人员为确保项目继续符合组织的商业需求而开展变更管理。
+                                        <LineBreak />
+                                        如果变更太多、太大，就可能需要修改项目章程，甚至必须终止现行项目，而另外启动一个新项目。
+                                <LineBreak />
+                                <LineBreak />
+                                <Bold>2、变更程序</Bold> 
+                                        <LineBreak />
+                                        变更管理的程序包括五个大步骤：从源头上管理变更，提出变更请求，评审变更请求，实施和跟踪批准的变更，以及总结经验教训。
+                                <LineBreak />
+                                <LineBreak />
+                                从源头上管理变更：项目经理应该积极主动地工作，对导致人们规避整体控制的因素施加影响，防止人们有意无意地规避对变更的综合评审。
+                                <LineBreak />
+                                <LineBreak />
+                                提出变更请求：应该尽可能用书面方式提出变更请求。正式性，考虑后果。
+                                        <LineBreak />
+                                        评审变更请求：变更无论大小，都必须经过综合评审，确认从总体上有利于项目，才能加以批准。
+                                        <LineBreak />
+                                        实施和追踪批准的变更，总结经验教训。
+                                   
+
+
+                                <Figure HorizontalAnchor="ColumnLeft" VerticalAnchor="ContentCenter">
+                                    <BlockUIContainer>
+                                        <Image
+            Width="400"
+            Height="250"
+            Source="/Images/Document/变更审批.png" />
+                                    </BlockUIContainer>
+                                </Figure>
+                                <LineBreak />
+                            </Paragraph>
+                        </FlowDocument>
+                    </FlowDocumentScrollViewer>
+                </Expander>
+               
+             
+                <Expander x:Name="expanderXiangMuZhiLiangGuanLi" Header="项目质量管理">
+                    <FlowDocumentScrollViewer HorizontalAlignment="Left" Width="600">
+                        <FlowDocument
+                    FontFamily="{DynamicResource MahApps.Fonts.Family.Control}"
+                    FontSize="14" PagePadding="20" TextAlignment="Left" 
+                    Foreground="{DynamicResource MahApps.Brushes.Text}"
+                    LineHeight="20">
+                            <Paragraph>
+                               
+                                    
+                                    <Run FontSize="16" FontWeight="Bold">项目质量管理</Run>
+                                    <LineBreak />
+                                    <Run FontSize="16" FontWeight="Bold">流程1：实施质量保证</Run>
+                               
+                               
+                                <Figure HorizontalAnchor="ColumnLeft" VerticalAnchor="ContentCenter">
+                                    <BlockUIContainer>
+                                        <Image
+Width="600"
+Height="300"
+Source="/Images/Document/质量/实施质量保证.png" />
+                                    </BlockUIContainer>
+                                </Figure>
+
+                                需要持续开展的过程。
+                                <LineBreak />
+                                <LineBreak />
+                                <Bold>1、在管理质量过程，要做以下五件主要工作：</Bold>
+                                <LineBreak />
+                                <LineBreak />
+                                （1）让主要干系人确信项目将会达到质量要求，从而能够满足他们的需要、期望和需求。
+                                        <LineBreak />
+                                        （2）执行（包括细化后执行）质量管理计划中规定的质量管理活动，确保项目工作过程和工作成果达到具体质量测量指标和高层级质量标准。
+                                        <LineBreak />
+                                        （3）编制将用于质量控制的质量测试与评估文件。这是把质量标准和质量测量指标转化成质量测评工具（如质量核对单）。
+                                        <LineBreak />
+                                        （4）根据质量管理计划和质量控制测量结果（实际质量绩效），提出变更请求，实现过程改进。
+                                        <LineBreak />
+                                        （5）根据质量管理计划、质量测量指标、本过程的实施情况，以及质量控制测量结果，编制质量报告。
+                                <LineBreak />
+                                <LineBreak />
+                                <Bold>2、管理质量过程的工具</Bold>，从数据收集和数据分析到决策和数据表现，这些大类与规划质量管理过程一致。但是，大类下面的具体技术并不完全相同。本过程还有审计、面向X的设计、问题解决和质量改进方法。
+                                        <LineBreak />
+                                        数据分析中包括备选方案分析、文件分析、过程分析和根本原因分析。
+                                        <LineBreak />
+                                        数据表现中包括亲和图、因果图、流程图、直方图、矩阵图和散点图。
+                                <LineBreak />
+                                <LineBreak />
+                                <Bold>3、注意点：</Bold> 保证质量可以提高生产率，降低成本。
+                                        <LineBreak />
+                                        劣质和低等级不是一回事。如果没有足够的成本来满足既定的项目要求，可以降低项目的等级（缩小项目范围，减少项目功能），但不能牺牲质量。
+                                 
+
+                               
+                                <LineBreak />
+                            </Paragraph>
+                        </FlowDocument>
+                    </FlowDocumentScrollViewer>
+                </Expander>
+                
+                <Expander x:Name="expanderXiangMuRenLiZiYuanGuanLi" Header="项目人力资源管理">
+                    <FlowDocumentScrollViewer HorizontalAlignment="Left" Width="600">
+                        <FlowDocument
+                    FontFamily="{DynamicResource MahApps.Fonts.Family.Control}"
+                    FontSize="14" PagePadding="20" TextAlignment="Left" 
+                    Foreground="{DynamicResource MahApps.Brushes.Text}"
+                    LineHeight="20">
+                            <Paragraph>
+                              
+                                    <Bold></Bold>
+                                    <Run FontSize="16" FontWeight="Bold">项目人力资源管理</Run>
+                                    <LineBreak />
+                                    <Run FontSize="16" FontWeight="Bold">流程1：组建项目团队</Run>
+                                <LineBreak />
+                                <Figure HorizontalAnchor="ColumnLeft" VerticalAnchor="ContentCenter">
+                                    <BlockUIContainer>
+                                        <Image
+Width="600"
+Height="300"
+Source="/Images/Document/人力/组建项目团队.png" />
+                                    </BlockUIContainer>
+                                </Figure>
+                                <Run FontSize="16" FontWeight="Bold">流程2：建设项目团队</Run>
+                                <LineBreak />
+                                <Figure HorizontalAnchor="ColumnLeft" VerticalAnchor="ContentCenter">
+                                    <BlockUIContainer>
+                                        <Image
+Width="600"
+Height="300"
+Source="/Images/Document/人力/建设项目团队.png" />
+                                    </BlockUIContainer>
+                                </Figure>
+
+                                需要持续开展的过程。
+                                <LineBreak />
+                                <LineBreak />
+                                <Bold>1、主要内容：</Bold>
+                                <LineBreak /> 在开展各种团队建设活动，创建和维护良好的团队氛围，提高团队成员个人的胜任力，提高整个团队的工作能力，以提高团队绩效。
+                                        <LineBreak />
+                                        团队精神，开放式沟通，了解多样性、尊重多样性，以工作和结果为导向。
+                                <LineBreak />
+                                <LineBreak />
+                                按照塔克曼的团队建设五阶段理论，项目团队要经过
+                                <Bold>从形成、震荡、规范、成熟到解散</Bold> 的五个阶段。
+                                        <LineBreak />
+                                        ·在形成阶段，团队成员个人需要相互认识。因为成员之间还不熟悉，所以不能采用参与式领导风格，只能采用命令或指挥式领导风格。
+                                        <LineBreak />
+                                        ·在震荡阶段，团队成员尝试合作，出现了大量矛盾，就需要磨合。项目经理应该像教练一样指导团队成员尽快完成磨合。教练型领导风格是介于命令式与参与式之间的。
+                                <LineBreak />
+                                <LineBreak />
+                                ·在规范阶段，团队建立了一系列书面规章制度，团队成员都按规章制度行事。项目经理应该给团队成员提供支持，以便他们遵守规章制度。支持型领导风格，是参与式领导风格的一种。
+                                <LineBreak />
+                                <LineBreak />
+                                ·在成熟阶段，书面规章制度已经在团队成员的心里内在化了，项目经理应该用授权型领导风格（参与式领导风格的一种），把工作授权给团队成员。
+                                <LineBreak />
+                                ·在解散阶段，项目经理可能又要重新采用命令或指挥式领导风格流程。
+                                <LineBreak />
+                                <LineBreak />
+                                <Bold>2、方法</Bold> 
+                                        <LineBreak />
+                                        集中办公。
+                                        <LineBreak />
+                                        使用沟通技术，五种人际关系技能：团队建设，谈判，激励，影响力，冲突管理。同时应用：认可和奖励，培训，个人和团队培训工具，会议。
+                                <LineBreak />
+                                <LineBreak />
+                                <Bold>3、解释。</Bold> 
+                                        <LineBreak />
+                                        冲突管理：
+                                        <LineBreak />
+                                        冲突不可避免，且适当解决对团队有益，需要通过找到问题的根源，依靠冲突当事人自己解决。
+                                        <LineBreak />
+                                        个性是引起冲突的最少见原因。项目中的大多数冲突，都有更直接的原因，如不同的人对同一件事有不同的利益追求或不同的看法。
+                                <LineBreak />
+                                <LineBreak />
+                                解决原则：开诚布公；着眼团队和项目，现在和未来；对事不对人；当事人自己解决。
+                                        <LineBreak />
+                                        解决方法：合作或解决问题。面对。妥协或调解。缓和或包容。撤退或回避。强制或命令。
+                                        <LineBreak />
+                                        激励理论：管理学中有多种激励理论，如马斯洛的需求层次理论，麦格雷戈的X理论和Y理论，赫兹伯格的双因素理论，弗鲁姆的期望理论，麦克利兰的成就动机理论。
+                                <LineBreak />
+                                <LineBreak />
+
+                                <Bold></Bold>
+                                    <Run FontSize="16" FontWeight="Bold">流程3：管理项目团队</Run>
+                                    <LineBreak /><Figure HorizontalAnchor="ColumnLeft" VerticalAnchor="ContentCenter">
+                                    <BlockUIContainer>
+                                        <Image
+            Width="600"
+            Height="300"
+            Source="/Images/Document/人力/管理项目团队.png" />
+                                    </BlockUIContainer>
+                                </Figure>
+                                    
+                                        需要持续开展的过程。
+                                <LineBreak />
+                                <LineBreak />
+                                ·建设团队过程，是要基于对什么行为能导致良好团队绩效的预测，采取这些行为来“推动”团队的发展。
+                                <LineBreak />
+                                <LineBreak />
+                                ·管理团队过程，是要基于对实际行为及其效果的回顾，采取补充行为来“拉动”团队的发展。管理团队，更像一个监控过程。
+                                <LineBreak />
+                                <LineBreak />
+                                重要的人际关系技能：冲突管理，制定决策，情商，影响力，领导力。
+                                
+
+                                
+                                <LineBreak />
+                            </Paragraph>
+                        </FlowDocument>
+                    </FlowDocumentScrollViewer>
+                </Expander>
+                
+                <Expander x:Name="expanderXiangMuGouTongGuanLi" Header="项目沟通管理">
+                    <FlowDocumentScrollViewer HorizontalAlignment="Left" Width="600">
+                        <FlowDocument
+                    FontFamily="{DynamicResource MahApps.Fonts.Family.Control}"
+                    FontSize="14" PagePadding="20" TextAlignment="Left" 
+                    Foreground="{DynamicResource MahApps.Brushes.Text}"
+                    LineHeight="20">
+                            <Paragraph>
+                              
+                                    <Bold></Bold>
+                                    <Run FontSize="16" FontWeight="Bold">项目沟通管理</Run>
+                                    <LineBreak />
+                                    <Run FontSize="16" FontWeight="Bold">流程1：管理沟通</Run>
+                                <LineBreak />
+                                <Figure HorizontalAnchor="ColumnLeft" VerticalAnchor="ContentCenter">
+                                    <BlockUIContainer>
+                                        <Image
+Width="600"
+Height="300"
+Source="/Images/Document/沟通/管理沟通.png" />
+                                    </BlockUIContainer>
+                                </Figure>
+
+                                需要持续开展的过程。
+                                        <LineBreak />
+                                        实实在在地开展沟通；只提供项目方所需要的信息，不多余，准时准点。
+                                <LineBreak />
+                                <LineBreak />
+                                主要的人际关系与团队技能包括积极倾听（专注听别人说话，并适时提供反馈）、冲突管理（有效预防和解决与别人的冲突）、政治意识（了解政治氛围）、文化意识（了解文化氛围）、会议管理（有效召开会议）、人际交往（建立关系网络，如微信朋友圈）。
+                                <LineBreak />
+                                <LineBreak />
+                                主要的沟通技能包括具有沟通胜任力（针对特定事情或对象的沟通能力），能够提供反馈、使用非口头技能和进行演示。
+                                    
+
+
+                                
+                                <LineBreak />
+                            </Paragraph>
+                        </FlowDocument>
+                    </FlowDocumentScrollViewer>
+                </Expander>
+           
+                <Expander x:Name="expanderXiangMuCaiGouGuanLi" Header="项目采购管理">
+                    <FlowDocumentScrollViewer HorizontalAlignment="Left" Width="600">
+                        <FlowDocument
+                    FontFamily="{DynamicResource MahApps.Fonts.Family.Control}"
+                    FontSize="14" PagePadding="20" TextAlignment="Left" 
+                    Foreground="{DynamicResource MahApps.Brushes.Text}"
+                    LineHeight="20">
+                            <Paragraph>
+                                
+                                    <Bold></Bold>
+                                    <Run FontSize="16" FontWeight="Bold">项目采购管理</Run>
+                                    <LineBreak />
+                                    <Run FontSize="16" FontWeight="Bold">流程1：实施采购</Run>
+                                <LineBreak />
+                                <Figure HorizontalAnchor="ColumnLeft" VerticalAnchor="ContentCenter">
+                                    <BlockUIContainer>
+                                        <Image
+Width="600"
+Height="400"
+Source="/Images/Document/采购/实施采购.png" />
+                                    </BlockUIContainer>
+                                </Figure>
+
+                                需要定期开展的过程。
+                                <LineBreak />
+                                <LineBreak />
+                                如果打算向过去已合作多年的厂家直接采购，即开展单一来源采购，在做出决定之前，仍然必须审查该厂家是否有资格承接本次工作任务。
+                                <LineBreak />
+                                <LineBreak />
+                                实施采购过程包括招标、投标、评标和授标四个环节。本过程的工具与技术自然也就是用于开展这四个环节的。专家判断是四个环节都要使用的。
+                                        <LineBreak />
+                                        第一是招标环节的广告。
+                                        <LineBreak />
+                                        第二是投标环节的投标人会议。
+                                        <LineBreak />
+                                        第三是评标环节的建议书评价（属于数据分析），这是用于评标的方法。
+                                        <LineBreak />
+                                        第四是授标环节的谈判（属于人际关系与团队技能）。
+                                <LineBreak />
+                                <LineBreak />
+                                还要特别注意的一点是：不要设法从对方口袋里去“拿”钱，而要从减轻风险入手去“省”钱。
+                                        <LineBreak />
+                                        下面列举一些常见的谈判策略：最后期限，自己的权力有限，拖延，撤退，出乎意料，公平合理，既成事实，好人坏人。
+                                   
+
+
+                               
+                                <LineBreak />
+                            </Paragraph>
+                        </FlowDocument>
+                    </FlowDocumentScrollViewer>
+                </Expander>
+                <Expander x:Name="expanderXiangMuGanXianRenGuanLi" Header="项目干系人管理">
+                    <FlowDocumentScrollViewer HorizontalAlignment="Left" Width="600">
+                        <FlowDocument
+                    FontFamily="{DynamicResource MahApps.Fonts.Family.Control}"
+                    FontSize="14" PagePadding="20" TextAlignment="Left" 
+                    Foreground="{DynamicResource MahApps.Brushes.Text}"
+                    LineHeight="20">
+                            <Paragraph>
+                              
+                                    <Bold></Bold>
+                                    <Run FontSize="16" FontWeight="Bold">项目干系人管理</Run>
+                                    <LineBreak />
+                                    <Run FontSize="16" FontWeight="Bold">流程1：管理干系人参与</Run>
+                                <LineBreak />
+                                <Figure HorizontalAnchor="ColumnLeft" VerticalAnchor="ContentCenter">
+                                    <BlockUIContainer>
+                                        <Image
+Width="600"
+Height="300"
+Source="/Images/Document/干系人/管理干系人参与.png" />
+                                    </BlockUIContainer>
+                                </Figure>
+
+                                在这个过程中，需要把项目团队中的问题、项目团队与其他干系人之间的问题以及其他干系人之间的问题记录下来，形成问题日志更新。
+                                <LineBreak />
+                                <LineBreak />
+                                在这个过程中，需要提出变更请求。变更请求可能包括对干系人参与计划的修改建议，以及对项目及其成果的修改建议（也许原来误解了干系人的需求，或者干系人的需求发生了变化）。
+                                <LineBreak />
+                                <LineBreak />
+                                会议，沟通技能等。
+                                 
+
+
+                               
+                                <LineBreak />
+                            </Paragraph>
+                        </FlowDocument>
+                    </FlowDocumentScrollViewer>
+                </Expander>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <!--  数据模板  -->
+                <Expander x:Name="expanderShuJuMoBan" Header="数据模板" />
+
+                <!--  问题  -->
+                <Expander x:Name="expanderWenTi" Header="问题" />
+
+
+
+
+            </StackPanel>
+        </ScrollViewer>
+
+
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,545 @@
+﻿<UserControl
+    x:Class="promaneger.Views.ItemView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:cv="clr-namespace:promaneger.Common.Converters"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:local="clr-namespace:promaneger.Views"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:viewmodels="clr-namespace:promaneger.ViewModels"
+            xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase"
+    
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <!-- Define a CollectionViewSource with sorting by ProgressBar Value -->
+        <CollectionViewSource x:Key="SortedTasks" Source="{Binding FilteredProjects}">
+            <CollectionViewSource.SortDescriptions>
+                <!-- Sort by ProgressValue, assuming ProgressValue is a property in the bound object -->
+                <scm:SortDescription PropertyName="ProgressPercentage" Direction="Descending"/>
+            </CollectionViewSource.SortDescriptions>
+        </CollectionViewSource>
+    </UserControl.Resources>
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <!--  第一行  -->
+        <TextBlock
+            Margin="15,10"
+            FontSize="22"
+            Text="{Binding LoginInfo}" />
+        <!--  统计行  -->
+        <ItemsControl Grid.Row="1" ItemsSource="{Binding StatPanelList}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="4" />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Border
+                        Margin="10"
+                        Background="{Binding BackColor}"
+                        CornerRadius="5">
+                        <Border.InputBindings>
+                            <MouseBinding
+                                Command="{Binding DataContext.NavigateCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ItemsControl}}"
+                                CommandParameter="{Binding}"
+                                MouseAction="LeftClick" />
+                        </Border.InputBindings>
+
+                        <Border.Style>
+                            <Style TargetType="Border">
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Effect">
+                                            <Setter.Value>
+                                                <DropShadowEffect
+                                                    BlurRadius="10"
+                                                    ShadowDepth="1"
+                                                    Color="#DDDDDD" />
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Border.Style>
+                        <Grid>
+                            <StackPanel Margin="20,10">
+                                <materialDesign:PackIcon
+                                    Width="30"
+                                    Height="30"
+                                    Kind="{Binding Icon}" />
+                                <TextBlock
+                                    Margin="0,15"
+                                    FontSize="15"
+                                    Text="{Binding ItemName}" />
+                                <TextBlock
+                                    FontSize="40"
+                                    FontWeight="Bold"
+                                    Text="{Binding Result}" />
+                            </StackPanel>
+                            <!--  画背景俩半圆  -->
+
+                            <Canvas ClipToBounds="True">
+                                <Border
+                                    Canvas.Top="10"
+                                    Canvas.Right="-50"
+                                    Width="120"
+                                    Height="120"
+                                    Background="#FFFFFF"
+                                    CornerRadius="100"
+                                    Opacity="0.1" />
+                                <Border
+                                    Canvas.Top="80"
+                                    Canvas.Right="-30"
+                                    Width="120"
+                                    Height="120"
+                                    Background="#FFFFFF"
+                                    CornerRadius="100"
+                                    Opacity="0.1" />
+                            </Canvas>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        <!--  listgrid  -->
+        <Grid
+            Grid.Row="2"
+            Margin="0,10"
+            ScrollViewer.VerticalScrollBarVisibility="Hidden">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="0.8*" />
+            </Grid.ColumnDefinitions>
+            <Border
+                Margin="10,0"
+                Background="#BEBEBE"
+                CornerRadius="5"
+                Opacity="0.1" />
+            <!--  第一列项目  -->
+
+
+            <DockPanel Margin="10,0">
+                <!--  i项目和按钮  -->
+                <DockPanel
+                    Margin="10,5"
+                    DockPanel.Dock="Top"
+                    LastChildFill="False">
+                    <TextBlock
+                        FontSize="24"
+                        FontWeight="Bold"
+                        Text="项目" />
+                    <TextBox
+                        x:Name="FilterTextBox"
+                        Width="150"
+                        Margin="50,5,5,5"
+                        md:HintAssist.Hint="输入过滤内容..."
+                        Text="{Binding FilterText}"
+                        TextChanged="FilterTextBox_TextChanged" />
+                    <Button Command="{Binding SelectProCmm}" Content="搜索" />
+
+                    <Button
+                        Width="30"
+                        Height="30"
+                        VerticalAlignment="Top"
+                        Command="{Binding ShowAddProjectDialogCmm}"
+                        DockPanel.Dock="Right"
+                        Style="{StaticResource MaterialDesignFloatingActionAccentButton}">
+                        <md:PackIcon Kind="Add" />
+                    </Button>
+                </DockPanel>
+
+
+                <ListBox
+                    HorizontalContentAlignment="Stretch"
+                    ItemsSource="{Binding Source={StaticResource SortedTasks}}"
+                    ScrollViewer.CanContentScroll="False">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseDoubleClick">
+                            <i:InvokeCommandAction Command="{Binding ShowEditProjectDialogCmm}" CommandParameter="{Binding SelectedItem, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ListBox}}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+
+
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <!--  第一列样式  -->
+                                <StackPanel Grid.Column="0">
+                                    <TextBlock
+                                        Margin="15,15,0,0"
+                                        FontSize="18"
+                                        FontWeight="Bold"
+                                        Text="{Binding Title}" />
+                                    <TextBlock
+                                        Margin="15,0,0,0"
+                                        FontSize="12"
+                                        Foreground="Gray"
+                                        Opacity="0.5"
+                                        Text="{Binding Description}" />
+
+
+                                    <StackPanel
+                                        HorizontalAlignment="Left"
+                                        Background="Transparent"
+                                        Orientation="Horizontal">
+                                        <materialDesign:PackIcon Margin="15,0" Kind="NotebookOutline" />
+                                        <TextBlock Margin="-5,0,0,0" Text="创建时间：" />
+                                        <TextBlock Text="{Binding Path=StartDate, StringFormat=yyyy-MM-dd}" />
+                                        <TextBlock x:Name="progrssbar"
+                                            Margin="100,0,5,0"
+                                            HorizontalAlignment="Right"
+                                            Text="{Binding ProgressPercentage, StringFormat={}{0}%}" />
+
+
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <ProgressBar
+                                            x:Name="itemprogress"
+                                            Width="350"
+                                            Height="10"
+                                            HorizontalAlignment="Left"
+                                            Maximum="100"
+                                            Value="{Binding ProgressPercentage, Mode=OneWay}" />
+                                        <Border x:Name="StatusBorder">
+                                            <TextBlock
+                                                x:Name="emergency"
+                                                Margin="10,0,0,0"
+                                                HorizontalAlignment="Right"
+                                                FontSize="15"
+                                                FontWeight="Bold"
+                                                Text="{Binding EmergencyStatus}">
+                                                <TextBlock.Style>
+                                                    <Style TargetType="TextBlock">
+                                                        <Setter Property="Foreground" Value="Black" />
+                                                        <Setter Property="Background" Value="Transparent" />
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding Emergency}" Value="1">
+                                                                <Setter Property="Foreground" Value="Red" />
+                                                                <Setter Property="Background" Value="Transparent" />
+                                                            </DataTrigger>
+                                                            <DataTrigger Binding="{Binding Emergency}" Value="0">
+                                                                <Setter Property="Foreground" Value="#EFA302" />
+                                                                <Setter Property="Background" Value="Transparent" />
+                                                            </DataTrigger>
+                                                            <DataTrigger Binding="{Binding Emergency}" Value="-1">
+                                                                <Setter Property="Foreground" Value="Green" />
+                                                                <Setter Property="Background" Value="Transparent" />
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </TextBlock.Style>
+                                            </TextBlock>
+                                        </Border>
+
+
+                                    </StackPanel>
+
+                                </StackPanel>
+
+                                <!--  第二列样式  -->
+
+                                <Grid Grid.Column="1" Margin="10">
+                                    <!--  Grid definition  -->
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <!--  "项目数据" Label  -->
+                                    <TextBlock
+                                        Grid.Row="0"
+                                        Grid.Column="0"
+                                        FontSize="16"
+                                        FontWeight="Bold"
+                                        Text="项目数据" />
+
+                                    <!--  项目数据: 所有任务  -->
+                                    <StackPanel
+                                        Grid.Row="1"
+                                        Grid.Column="0"
+                                        Margin="0,5,0,0"
+                                        Orientation="Horizontal">
+                                        <TextBlock
+                                            FontSize="14"
+                                            Opacity="0.5"
+                                            Text="所有任务: " />
+                                        <TextBlock
+                                            FontSize="14"
+                                            FontWeight="Bold"
+                                            Text="{Binding TotalTasks}" />
+                                    </StackPanel>
+
+                                    <!--  项目数据: 当前任务  -->
+                                    <StackPanel
+                                        Grid.Row="1"
+                                        Grid.Column="1"
+                                        Margin="20,5,0,0"
+                                        Orientation="Horizontal">
+                                        <TextBlock
+                                            FontSize="14"
+                                            Opacity="0.5"
+                                            Text="已完成: " />
+                                        <TextBlock
+                                            FontSize="14"
+                                            FontWeight="Bold"
+                                            Text="{Binding CompletedTasks}" />
+                                    </StackPanel>
+
+                                    <!--  执行人  -->
+                                    <StackPanel
+                                        Grid.Row="2"
+                                        Grid.Column="0"
+                                        Grid.ColumnSpan="2"
+                                        Margin="0,10,0,0"
+                                        Orientation="Horizontal">
+                                        <TextBlock
+                                            FontSize="14"
+                                            Opacity="0.5"
+                                            Text="责任人: " />
+                                        <TextBlock
+                                            Margin="5,0,0,0"
+                                            FontSize="14"
+                                            FontWeight="Bold"
+                                            Text="{Binding Mainson}" />
+                                        <!--<TextBlock
+                                            Margin="5,0,0,0"
+                                            FontSize="14"
+                                            FontWeight="Bold"
+                                            Text="（）" />-->
+                                    </StackPanel>
+                                </Grid>
+
+
+                                <md:PopupBox HorizontalAlignment="Right" Panel.ZIndex="1" Grid.Column="2" Foreground="{DynamicResource PrimaryHueLightBrush}">
+                                    <Button Content="删除" Command="{Binding DataContext.DelProjectCmm,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=ListBox}}" CommandParameter="{Binding}"></Button>
+                                </md:PopupBox>
+
+                            </Grid>
+                            
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+
+                </ListBox>
+                
+
+
+
+            </DockPanel>
+
+
+
+
+
+            <!--  第二列 事项  -->
+            <Border
+                Grid.Column="1"
+                Margin="10,0"
+                Background="#bebebebe"
+                CornerRadius="5"
+                Opacity="0.1" />
+            <DockPanel Grid.Column="1" Margin="10,0">
+                <!--  按钮  -->
+                <DockPanel
+                    Margin="10,5"
+                    DockPanel.Dock="Top"
+                    LastChildFill="False">
+                    <TextBlock
+                        FontSize="24"
+                        FontWeight="Bold"
+                        Text="项目事项" />
+                    <TextBox
+                        x:Name="FilterTextTasksBox"
+                        Width="150"
+                        Margin="15,5,5,5"
+                        md:HintAssist.Hint="输入项目..."
+                        Text="{Binding FilterTextTasks}"
+                        TextChanged="FilterTextTasksBox_TextChanged" />
+                    <Button Command="{Binding SelectTasksCmm}" Content="搜索" />
+                    <Button
+                        Width="30"
+                        Height="30"
+                        VerticalAlignment="Top"
+                        Command="{Binding ShowAddTaskDialogCmm}"
+                        DockPanel.Dock="Right"
+                        Style="{StaticResource MaterialDesignFloatingActionAccentButton}">
+                        <md:PackIcon Kind="Add" />
+                    </Button>
+                </DockPanel>
+
+                <!--  数据列表  -->
+                <ListBox
+                    HorizontalContentAlignment="Stretch"
+                    ItemsSource="{Binding FilteredTasks}"
+                    ScrollViewer.CanContentScroll="False"
+                    ScrollViewer.VerticalScrollBarVisibility="Auto">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseDoubleClick">
+                            <i:InvokeCommandAction Command="{Binding ShowEditTasksDialogCmm}" CommandParameter="{Binding SelectedItem, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ListBox}}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Border
+                                Margin="5"
+                                BorderBrush="LightGray"
+                                BorderThickness="1"
+                                CornerRadius="8">
+                                <StackPanel Margin="10" Orientation="Vertical">
+                                    <!--  First Row: Task Name, Executor, Priority, Status  -->
+                                    <StackPanel Orientation="Horizontal">
+                                        <md:PopupBox HorizontalAlignment="Right" Panel.ZIndex="1" Grid.Column="2" Foreground="{DynamicResource PrimaryHueLightBrush}">
+                                            <Button Content="删除" Command="{Binding DataContext.DelTaskCmm,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=ListBox}}" CommandParameter="{Binding}"></Button>
+                                        </md:PopupBox>
+                                        <StackPanel Margin="15,5">
+                                            <TextBlock
+                                                VerticalAlignment="Center"
+                                                FontSize="16"
+                                                FontWeight="Bold"
+                                                Text="任务名称：" />
+                                            <TextBlock
+                                                VerticalAlignment="Center"
+                                                FontSize="16"
+                                                Text="{Binding Title}" />
+                                        </StackPanel>
+                                        <StackPanel Margin="15,5">
+                                            <TextBlock
+                                                VerticalAlignment="Center"
+                                                FontSize="16"
+                                                FontWeight="Bold"
+                                                Text="所属项目：" />
+                                            <TextBlock
+                                                VerticalAlignment="Center"
+                                                FontSize="16"
+                                                Text="{Binding ProjectTitle}" />
+                                        </StackPanel>
+                                        <StackPanel Margin="15,5">
+                                            <TextBlock
+                                                VerticalAlignment="Center"
+                                                FontSize="16"
+                                                FontWeight="Bold"
+                                                Text="完成状态：" />
+                                            <TextBlock
+                                                VerticalAlignment="Center"
+                                                FontSize="16"
+                                                Foreground="Gold"
+                                                Text="{Binding DoneStatus}" />
+                                        </StackPanel>
+                                        <TextBlock
+                                            Margin="5,0,0,0"
+                                            VerticalAlignment="Center"
+                                            FontSize="16"
+                                            FontWeight="Bold"
+                                            Foreground="{DynamicResource PrimaryHueLightBrush}"
+                                            Text="是否完成" />
+                                        <ToggleButton
+                                            Command="{Binding DataContext.ChangeTaskStatusCmm, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ListBox}}"
+                                            CommandParameter="{Binding}"
+                                            DockPanel.Dock="Right"
+                                            IsChecked="{Binding WithStatus, Mode=OneTime}" />
+
+                                    </StackPanel>
+
+                                    <!--  Separator Line  -->
+                                    <Separator
+                                        Height="1"
+                                        Margin="0,10,0,10"
+                                        Background="LightGray" />
+
+                                    <!--  Second Row: Task Description, Start Time, End Time  -->
+                                    <StackPanel Orientation="Horizontal">
+                                        <StackPanel Margin="15,5,120,5">
+                                            <TextBlock
+                                                VerticalAlignment="Center"
+                                                FontSize="14"
+                                                FontWeight="Bold"
+                                                Text="任务描述：" />
+                                            <TextBlock
+                                                VerticalAlignment="Center"
+                                                FontSize="14"
+                                                Text="{Binding Description}" />
+                                        </StackPanel>
+                                        <StackPanel Margin="15,5">
+                                            <TextBlock
+                                                VerticalAlignment="Center"
+                                                FontSize="14"
+                                                FontWeight="Bold"
+                                                Text="开始时间：" />
+                                            <TextBlock
+                                                VerticalAlignment="Center"
+                                                FontSize="14"
+                                                Text="{Binding StarttaskDate, StringFormat=yyyy-MM-dd}" />
+                                        </StackPanel>
+                                        <StackPanel Margin="15,5">
+                                            <TextBlock
+                                                VerticalAlignment="Center"
+                                                FontSize="14"
+                                                FontWeight="Bold"
+                                                Text="截止时间：" />
+                                            <TextBlock
+                                                VerticalAlignment="Center"
+                                                FontSize="14"
+                                                Text="{Binding EndtaskDate, StringFormat=yyyy-MM-dd}" />
+                                        </StackPanel>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+
+
+
+
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+
+                </ListBox>
+
+                <!--<DataGrid
+                Margin="20,10"
+                DockPanel.Dock="Bottom"
+                ItemsSource="{Binding }"
+                AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="任务标题" Binding="{Binding Title}" />
+                        <DataGridTextColumn Header="任务描述" Binding="{Binding Description}" />
+                        <DataGridTextColumn Header="任务状态" Binding="{Binding Status}" />
+                        <DataGridTextColumn Header="开始日期" Binding="{Binding StarttaskDate}" />
+                        <DataGridTextColumn Header="截止日期" Binding="{Binding EndtaskDate}" />
+                        <DataGridTextColumn Header="所属项目ID" Binding="{Binding ProjectTitle}" />
+                    </DataGrid.Columns>
+                </DataGrid>-->
+
+
+
+            </DockPanel>
+
+        </Grid>
+
+    </Grid>
+</UserControl>
+

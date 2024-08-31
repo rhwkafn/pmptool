@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_LastSelectedProfileId>D:\vs program\lib\promaneger\promaneger\promaneger\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
+  </PropertyGroup>
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Views\Dailogs\AddMemoUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Dailogs\AddTaskUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Dailogs\EditMemoUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Dailogs\EditProjectUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Dailogs\EditTaskUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Documents\GuihuaView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Documents\JiankongView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Documents\QidongView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Documents\shilidaima.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Documents\ShouweiView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Documents\ZhixingView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\General\GanttView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\General\SandianView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\General\WangluoView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\General\ZhengzhiView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\LoginUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\settings\AboutView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\GeneralView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\IndexView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ItemView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\MainView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\SettingsView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\settings\ProfileView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\settings\SkinView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\settings\UserView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\DocumentView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\test.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\TodoView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\Dailogs\AddMemoUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Dailogs\AddProjectUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Dailogs\AddTaskUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Dailogs\EditMemoUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Dailogs\EditProjectUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Dailogs\EditTaskUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Documents\GuihuaView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Documents\JiankongView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Documents\QidongView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Documents\shilidaima.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Documents\ShouweiView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Documents\ZhixingView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\General\GanttView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\General\SandianView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\General\WangluoView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\General\ZhengzhiView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\LoginUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\settings\AboutView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\GeneralView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\IndexView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ItemView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\MainView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\SettingsView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\settings\ProfileView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\settings\SkinView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\settings\UserView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\DocumentView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\test.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\TodoView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

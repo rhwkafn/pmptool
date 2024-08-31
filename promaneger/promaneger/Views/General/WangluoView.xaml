@@ -1,0 +1,119 @@
+﻿<UserControl
+    x:Class="promaneger.Views.General.WangluoView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:promaneger.Views.General"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <Grid>
+
+
+
+        <DockPanel Grid.Row="0">
+
+
+
+
+
+            <FlowDocumentScrollViewer DockPanel.Dock="Top">
+                <FlowDocument
+                    FontFamily="{DynamicResource MahApps.Fonts.Family.Control}"
+                    FontSize="14"
+                    Foreground="{DynamicResource MahApps.Brushes.Text}"
+                    LineHeight="20">
+
+                    <Paragraph>
+
+                        <Bold>网络图</Bold>
+                        <LineBreak />
+                        网络图可用紧前关系绘图法，条件图法，箭线绘图法。
+                        <LineBreak />
+                        <LineBreak />
+                        使用紧前关系绘图法绘制进度网络图，
+                        <LineBreak />
+                        <LineBreak /> 通过确定和整合依赖关系来区分强制、选择、外部与内部依赖关系，在进度网络图中需考虑活动之间的提前量和滞后量。
+                        <LineBreak /> 项目管理信息系统中的进度计划编制软件有助于更有效地生成进度网络图紧前关系绘图法（也可译成“前导图法”）用节点表示活动，把活动名称及相关信息表示在节点上。
+
+                        <LineBreak /> 条件图法，略。箭线绘图法，在进度管理，排列活动顺序中有介绍。
+
+                        <LineBreak />
+                        <LineBreak /> 用途
+                        <LineBreak /> 在画出项目网络图并对各项活动做出工期估算之后，
+                        <LineBreak /> 就可以用顺推法，从项目的开始时间出发，顺时针推算，计算出各活动的最早开始时间和最
+早结束时间以及整个项目的完工时间。
+                        <LineBreak /> 关键路径即在网络图的各条路径中，总工期最长的那一条或那几条。
+
+                        <LineBreak />
+                        <LineBreak /> 案例如下
+                        <LineBreak />
+                        （1 ）画出项目的网络图。
+                        <LineBreak />
+                        （2 ）找出关键路径与项目工期。
+                        <LineBreak />
+                        （3 ）计算出各项活动的最早、最晚时间以及浮动时间。
+                        <LineBreak />
+                        （4 ）如果活动B 的资源被换成经验不足的资源，导致要1 2 周才能完成，这对项目
+                        
+                        有什么影响？<LineBreak />
+（5 ）如果管理层决定要增加一个重要活动G ，活动G 必须在活动C 之后和活动F
+                        
+                        之前完成，历时1 1 周。这对项目的进度会有什么影响？<LineBreak />
+
+                        <LineBreak />
+                        
+                        
+                        <Figure HorizontalAnchor="ColumnLeft" VerticalAnchor="ContentCenter">
+                            <BlockUIContainer>
+                                <Image
+                                    Width="600"
+                                    Height="150"
+                                    Source="/Images/Document/general/wangluo1.png" />
+                            </BlockUIContainer>
+                        </Figure>
+                        
+
+                    </Paragraph>
+
+                    <BlockUIContainer>
+                        <Image
+                            Width="600px"
+                            Height="300px"
+                            Source="/Images/Document/general/wang4.png" />
+                    </BlockUIContainer>
+                    <BlockUIContainer>
+                    <Image
+                            Width="600px"
+                            Height="300px"
+                            Source="/Images/Document/general/wang3.png" />
+                    </BlockUIContainer>
+
+                    <BlockUIContainer>
+
+                        <StackPanel Grid.Row="1" Orientation="Vertical">
+                            
+                        </StackPanel>
+
+                    </BlockUIContainer>
+
+
+                </FlowDocument>
+
+
+
+            </FlowDocumentScrollViewer>
+
+
+
+
+        </DockPanel>
+
+
+
+
+
+
+    </Grid>
+</UserControl>

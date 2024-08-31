@@ -1,0 +1,72 @@
+﻿<UserControl
+    x:Class="promaneger.Views.AboutView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:promaneger.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="450"
+    d:DesignWidth="800" 
+    mc:Ignorable="d">
+    <Grid>
+        <FlowDocumentScrollViewer HorizontalAlignment="Left" >
+            <FlowDocument
+                    FontFamily="{DynamicResource MahApps.Fonts.Family.Control}"
+                    FontSize="14" PagePadding="20" TextAlignment="Left" 
+                    Foreground="{DynamicResource MahApps.Brushes.Text}"
+                    LineHeight="20">
+                <Paragraph>
+                    <Bold></Bold>
+                    <Run FontSize="20" FontWeight="Bold">关于软件</Run>
+                    <LineBreak />
+
+                    本项目是使用.net core WPF开发的，基于Prison的mvvm框架和materialdesigner进行搭建的。
+                        <LineBreak />
+                        本应用程序只设置在windows上运行，未开展安卓和其他平台上的开发。
+                        <LineBreak />
+                        本项目是用于对项目管理知识pmp的一次工具性的实践，旨在把pmp项目管理知识，能够指导和帮助人们更加清晰快速对项目和事项的管理。
+                    <LineBreak />
+                    <LineBreak />
+                    首先在此感谢在实习期间对我耐心提供指导意见的李导师和唐经理，以及领导们的关心与支持。
+                    <LineBreak />
+                    参考书籍：
+汪博士解读PMP考试/ 汪小金著. -5 版. -北京：电子工业出版社，2018.2 ISBN 978-7-121-33321-7
+                    <LineBreak />
+                    <LineBreak />
+                    感谢在开发过程中的开源项目提供的框架性支持
+                    <LineBreak /> 使用的应用基础项目为B站痕迹gg提供的教程
+                    <LineBreak />
+                    
+                    B站up主龙马项目提供以及b站的视频教学
+<LineBreak />
+                    开源网址：
+                    
+                    <LineBreak />
+                    <LineBreak />
+                    感谢以下所运用到的源和命名空间库，开源项目的使用:
+                    <LineBreak />
+                    甘特图控件DlhSoft.ProjectData.GanttChart.LightWPF.Controls。
+                    <LineBreak />
+                    Syncfusion:
+                      <LineBreak />
+                    AIStudio框架:
+                    
+                    <LineBreak />
+软件有问题请联系，后续有机会再进行更新。
+
+                   
+
+                    <!--<Figure HorizontalAnchor="ColumnLeft" VerticalAnchor="ContentCenter">
+                        <BlockUIContainer>
+                            <Image
+            Width="600"
+            Height="300"
+            Source="/Images/Document/general/san1.png" />
+                        </BlockUIContainer>
+                    </Figure>-->
+                    <LineBreak />
+                </Paragraph>
+            </FlowDocument>
+        </FlowDocumentScrollViewer>
+    </Grid>
+</UserControl>

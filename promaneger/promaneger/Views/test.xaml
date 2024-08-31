@@ -1,0 +1,198 @@
+﻿<UserControl
+    x:Class="promaneger.Views.test"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:promaneger.Views"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+    d:DesignHeight="1500"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="项 目 章 程" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,10"/>
+
+            <Grid Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="项目名称：" Grid.Row="0" Grid.Column="0" Margin="5"/>
+                <TextBox Grid.Row="0" Grid.Column="1" Margin="5"/>
+
+                <TextBlock Text="项目发起人：" Grid.Row="1" Grid.Column="0" Margin="5"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Margin="5"/>
+
+                <TextBlock Text="准备日期：" Grid.Row="2" Grid.Column="0" Margin="5"/>
+                <TextBox Grid.Row="2" Grid.Column="1" Margin="5"/>
+
+                <TextBlock Text="项目经理：" Grid.Row="3" Grid.Column="0" Margin="5"/>
+                <TextBox Grid.Row="3" Grid.Column="1" Margin="5"/>
+
+                <TextBlock Text="项目客户：" Grid.Row="4" Grid.Column="0" Margin="5"/>
+                <TextBox Grid.Row="4" Grid.Column="1" Margin="5"/>
+
+                <TextBlock Text="项目目的或理由：" Grid.Row="5" Grid.Column="0" Margin="5"/>
+                <TextBox Grid.Row="5" Grid.Column="1" Margin="5"/>
+
+                <TextBlock Text="项目描述：" Grid.Row="6" Grid.Column="0" Margin="5"/>
+                <TextBox Grid.Row="6" Grid.Column="1" Margin="5"/>
+            </Grid>
+
+            <TextBlock Text="高水平项目和产品需求：" Margin="10,5"/>
+            <TextBox Margin="10,5"/>
+
+            <TextBlock Text="总预算：" Margin="10,5"/>
+            <TextBox Margin="10,5"/>
+
+            <TextBlock Text="启动风险：" Margin="10,5"/>
+            <TextBox Margin="10,5"/>
+
+            <TextBlock Text="第1页/共3页" HorizontalAlignment="Right" Margin="10"/>
+
+            <TextBlock Text="项 目 章 程" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,10"/>
+
+            <Grid Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="里程碑总表" Grid.Row="0" Grid.Column="0" Margin="5"/>
+                <TextBlock Text="到 期 日" Grid.Row="0" Grid.Column="1" Margin="5"/>
+
+                <!-- Repeat for each milestone -->
+                <TextBox Grid.Row="1" Grid.Column="0" Margin="5"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Margin="5"/>
+
+                <TextBox Grid.Row="2" Grid.Column="0" Margin="5"/>
+                <TextBox Grid.Row="2" Grid.Column="1" Margin="5"/>
+
+                <!-- Add more rows as needed -->
+            </Grid>
+
+            <Grid Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="项目目标" Grid.Row="0" Grid.Column="0" Margin="5"/>
+                <TextBlock Text="成功标准" Grid.Row="0" Grid.Column="1" Margin="5"/>
+                <TextBlock Text="批准人" Grid.Row="0" Grid.Column="2" Margin="5"/>
+
+                <TextBlock Text="范围：" Grid.Row="1" Grid.Column="0" Margin="5"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Margin="5"/>
+                <TextBox Grid.Row="1" Grid.Column="2" Margin="5"/>
+
+                <TextBlock Text="时间：" Grid.Row="2" Grid.Column="0" Margin="5"/>
+                <TextBox Grid.Row="2" Grid.Column="1" Margin="5"/>
+                <TextBox Grid.Row="2" Grid.Column="2" Margin="5"/>
+
+                <TextBlock Text="成本：" Grid.Row="3" Grid.Column="0" Margin="5"/>
+                <TextBox Grid.Row="3" Grid.Column="1" Margin="5"/>
+                <TextBox Grid.Row="3" Grid.Column="2" Margin="5"/>
+
+                <TextBlock Text="质量：" Grid.Row="4" Grid.Column="0" Margin="5"/>
+                <TextBox Grid.Row="4" Grid.Column="1" Margin="5"/>
+                <TextBox Grid.Row="4" Grid.Column="2" Margin="5"/>
+
+                <TextBlock Text="其他：" Grid.Row="5" Grid.Column="0" Margin="5"/>
+                <TextBox Grid.Row="5" Grid.Column="1" Margin="5"/>
+                <TextBox Grid.Row="5" Grid.Column="2" Margin="5"/>
+            </Grid>
+
+            <TextBlock Text="第2页/共3页" HorizontalAlignment="Right" Margin="10"/>
+
+            <TextBlock Text="项 目 章 程" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,10"/>
+
+            <TextBlock Text="验收标准：" Margin="10,5"/>
+            <TextBox Margin="10,5"/>
+
+            <TextBlock Text="项目经理职权层级" FontWeight="Bold" Margin="10,5"/>
+
+            <TextBlock Text="人员配备决策：" Margin="10,5"/>
+            <TextBox Margin="10,5"/>
+
+            <TextBlock Text="预算管理和偏差：" Margin="10,5"/>
+            <TextBox Margin="10,5"/>
+
+            <TextBlock Text="技术决策：" Margin="10,5"/>
+            <TextBox Margin="10,5"/>
+
+            <TextBlock Text="冲突解决：" Margin="10,5"/>
+            <TextBox Margin="10,5"/>
+
+            <TextBlock Text="超出职权范围的申请途径：" Margin="10,5"/>
+            <TextBox Margin="10,5"/>
+
+            <Grid Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="批准：" Grid.Row="0" Grid.Column="0" Margin="5"/>
+
+                <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal" Margin="5">
+                    <TextBlock Text="项目经理签字" Margin="5"/>
+                    <TextBox Width="200" Margin="5"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" Margin="5">
+                    <TextBlock Text="发起人或委托人签字" Margin="5"/>
+                    <TextBox Width="200" Margin="5"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal" Margin="5">
+                    <TextBlock Text="项目经理姓名" Margin="5"/>
+                    <TextBox Width="200" Margin="5"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" Margin="5">
+                    <TextBlock Text="发起人或委托人姓名" Margin="5"/>
+                    <TextBox Width="200" Margin="5"/>
+                </StackPanel>
+            </Grid>
+
+            <TextBlock Text="第3页/共3页" HorizontalAlignment="Right" Margin="10"/>
+        </StackPanel>
+    </Grid>
+
+
+</UserControl>

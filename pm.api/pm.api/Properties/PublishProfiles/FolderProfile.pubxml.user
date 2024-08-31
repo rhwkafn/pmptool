@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\pmapi</_PublishTargetUrl>
+    <History>True|2024-08-27T03:22:14.2797403Z||;False|2024-08-27T11:22:00.3365013+08:00||;True|2024-08-27T11:02:08.6599390+08:00||;False|2024-08-27T11:01:56.6603070+08:00||;True|2024-08-27T10:25:03.4988928+08:00||;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="ConnStr">
+      <Value>server=LAPTOP-ILE7H42Q%3buid=sa%3bpwd=123456%3bdatabase=PMerapp</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>

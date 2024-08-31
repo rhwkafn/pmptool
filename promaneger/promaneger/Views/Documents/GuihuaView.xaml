@@ -1,0 +1,1477 @@
+﻿<UserControl
+    x:Class="promaneger.Views.Documents.GuihuaView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:promaneger.Views.Documents"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    FontFamily="微软雅黑"
+    mc:Ignorable="d">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+
+
+        <!--  左侧导航条  -->
+        <StackPanel Grid.Column="0" Margin="10">
+            <TreeView x:Name="treeView" SelectedItemChanged="treeView_SelectedItemChanged_1">
+                <TreeViewItem Header="快速操作">
+                    <TreeViewItem Header="快速开始" />
+                    <!--<TreeViewItem Header="快速导入到项目和事项" />-->
+                </TreeViewItem>
+                <TreeViewItem Header="管理方案">
+                    <TreeViewItem Header="基本介绍" />
+                    <TreeViewItem Header="项目整合管理">
+                        <TreeViewItem Header="制定项目管理计划" />
+                    </TreeViewItem>
+                    <TreeViewItem Header="项目范围管理">
+                        <TreeViewItem Header="规划范围管理" />
+                        <TreeViewItem Header="收集需求" />
+                        <TreeViewItem Header="定义范围" />
+                        <TreeViewItem Header="创建WBS" />
+                    </TreeViewItem>
+                    <TreeViewItem Header="项目时间管理">
+                        <TreeViewItem Header="规划进度管理" />
+                        <TreeViewItem Header="定义活动" />
+                        <TreeViewItem Header="排列活动顺序" />
+                        <TreeViewItem Header="估算活动资源" />
+                        <TreeViewItem Header="估算活动持续时间" />
+                        <TreeViewItem Header="制定进度计划" />
+                    </TreeViewItem>
+                    <TreeViewItem Header="项目成本管理">
+                        <TreeViewItem Header="规划成本管理" />
+                        <TreeViewItem Header="估算成本" />
+                        <TreeViewItem Header="制定预算" />
+                    </TreeViewItem>
+                    <TreeViewItem Header="项目质量管理">
+                        <TreeViewItem Header="规划质量管理" />
+                    </TreeViewItem>
+                    <TreeViewItem Header="项目人力资源管理">
+                        <TreeViewItem Header="规划人力资源管理" />
+                    </TreeViewItem>
+                    <TreeViewItem Header="项目沟通管理">
+                        <TreeViewItem Header="规划沟通管理" />
+                    </TreeViewItem>
+                    <TreeViewItem Header="项目风险管理">
+                        <TreeViewItem Header="规划风险管理" />
+                        <TreeViewItem Header="识别风险" />
+                        <TreeViewItem Header="实施定性风险分析" />
+                        <TreeViewItem Header="实施定量风险分析" />
+                        <TreeViewItem Header="规划风险应对" />
+                    </TreeViewItem>
+                    <TreeViewItem Header="项目采购管理">
+                        <TreeViewItem Header="规划采购管理" />
+                    </TreeViewItem>
+                    <TreeViewItem Header="项目干系人管理">
+                        <TreeViewItem Header="规划干系人管理" />
+                    </TreeViewItem>
+                </TreeViewItem>
+                <TreeViewItem Header="数据模板" />
+                <TreeViewItem Header="问题" />
+                <TreeViewItem Header="展示全部" />
+            </TreeView>
+        </StackPanel>
+        <!--  显示部分  -->
+        <ScrollViewer
+            Grid.Column="1"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            HorizontalScrollBarVisibility="Auto"
+            VerticalScrollBarVisibility="Visible">
+            <StackPanel Orientation="Vertical">
+
+                <!--  快速操作  -->
+                <Expander x:Name="KuaiSuCaoZuo" Header="快速操作">
+                    <FlowDocumentScrollViewer HorizontalAlignment="Left" Width="700">
+                        <FlowDocument
+                            FontFamily="{DynamicResource MahApps.Fonts.Family.Control}"
+                            FontSize="14"
+                            Foreground="{DynamicResource MahApps.Brushes.Text}"
+                            LineHeight="20"
+                            PagePadding="20"
+                            TextAlignment="Left">
+                            <Paragraph>
+                                <Bold />
+                                <Run FontSize="20" FontWeight="Bold">注意事项</Run>
+                                <LineBreak />
+                                <Run FontSize="14">
+                                    1. 在正式进入启动过程组之前，项目发起人需要组织专家完成项目的前期准备工作，编写出相应的商业文件（如商业论证报告），签妥发起项目的合作协议。
+                                    在启动过程组，用项目章程宣布项目正式立项。为了尽早与项目干系人打交道，还应该
+                                    在启动过程组编制干系人登记册。干系人登记册，将不断调整和完善。
+                                </Run>
+                                <LineBreak />
+                            </Paragraph>
+
+                            <Paragraph>
+                                <Run FontSize="20" FontWeight="Bold">快速开始</Run>
+                                <LineBreak />
+                                <Run FontSize="14">本文档提供了PMP项目管理5个过程组和十大知识领域的介绍，后续将逐渐完善知识体系等内容。</Run>
+                                <LineBreak />
+                                <Run FontSize="14">本文档可上边导航栏中切换查看内容，方便您更查阅和使用。</Run>
+                                <LineBreak />
+                                <Run FontSize="14">本文档从过程组的形式展开管理，清晰化每个过程组所需做的内容。</Run>
+                                <LineBreak />
+                                <LineBreak />
+                                <Run FontSize="16" FontWeight="Bold">1、5大过程</Run>
+                                <LineBreak />
+
+
+
+                            </Paragraph>
+
+
+
+
+
+                            <Paragraph>
+                                <Run FontSize="16" FontWeight="Bold">2、5大过程生命周期</Run>
+                                <LineBreak />
+                            </Paragraph>
+
+
+
+                            <Paragraph>
+                                <Run FontSize="16" FontWeight="Bold">3、十大知识领域</Run>
+                                <LineBreak />
+                            </Paragraph>
+
+
+                            <Paragraph>
+                                <Run FontSize="16" FontWeight="Bold">4、全流程</Run>
+                                <LineBreak />
+
+                                <Figure HorizontalAnchor="ColumnLeft" VerticalAnchor="ContentCenter">
+                                    <BlockUIContainer>
+                                        <Image
+Width="600"
+Height="500"
+Source="/Images/Document/dingyi/10005.png" />
+                                    </BlockUIContainer>
+                                </Figure>
+                            </Paragraph>
+
+
+
+
+
+
+
+                        </FlowDocument>
+                    </FlowDocumentScrollViewer>
+
+                </Expander>
+
+
+                <!--  基本介绍  -->
+                <Expander x:Name="GuanLiFangAn" Header="基本介绍">
+                    <TextBlock>
+                        <Run FontSize="16" FontWeight="Bold">规划过程组：明确项目范围，优化目标，为实现目标而制定行动方案的一组过程。</Run>
+                        <LineBreak /></TextBlock>
+
+                </Expander>
+                <Expander x:Name="expanderXiangMuZhengHeGuanLi" Header="项目整合管理">
+                    <FlowDocumentScrollViewer HorizontalAlignment="Left" Width="600">
+                        <FlowDocument
+                            FontFamily="{DynamicResource MahApps.Fonts.Family.Control}"
+                            FontSize="14"
+                            Foreground="{DynamicResource MahApps.Brushes.Text}"
+                            LineHeight="20"
+                            PagePadding="20"
+                            TextAlignment="Left">
+
+
+                            <Paragraph>
+                                <Run FontSize="20" FontWeight="Bold">流程1：制定项目管理计划</Run>
+                                <LineBreak />
+                                <Run FontSize="14">仅开展一次或仅在预定义时点开展的项目管理过程，尽量保持不变。</Run>
+                                <LineBreak />
+                                <Run FontSize="14">说明：确定编制后续计划的程序和方法，以及开展项目执行、监控和收尾的程序与方法。</Run>
+                                <LineBreak /><LineBreak />
+                                <Run FontSize="14">根据《PMBOK指南》，项目管理计划由三大部分组成：分项管理计划、大基准、项目生命周期。</Run>
+                                <LineBreak />
+                                <Bold FontSize="14">主要的分项管理计划包括：</Bold>
+                                <LineBreak />
+                                <Run FontSize="14">·范围管理知识领域的范围管理计划、需求管理计划。</Run>
+                                <LineBreak />
+                                <Run FontSize="14">·进度管理知识领域的进度管理计划。</Run>
+                                <LineBreak />
+                                <Run FontSize="14">·成本管理知识领域的成本管理计划。</Run>
+                                <LineBreak />
+                                <Run FontSize="14">·质量管理知识领域的质量管理计划。</Run>
+                                <LineBreak />
+                                <Run FontSize="14">·资源管理知识领域的资源管理计划。</Run>
+                                <LineBreak />
+                                <Run FontSize="14">·沟通管理知识领域的沟通管理计划。</Run>
+                                <LineBreak />
+                                <Run FontSize="14">·风险管理知识领域的风险管理计划。</Run>
+                                <LineBreak />
+                                <Run FontSize="14">·采购管理知识领域的采购管理计划。</Run>
+                                <LineBreak />
+                                <Run FontSize="14">·干系人管理知识领域的干系人参与计划。</Run>
+                                <LineBreak />
+                                <Run FontSize="14">·整合管理知识领域的变更管理计划、配置管理计划（由制订项目管理计划过程生成）。</Run>
+                                <LineBreak /><LineBreak />
+                                <Bold>三大基准</Bold>
+                                <Run FontSize="14">是范围基准、进度基准和成本基准。</Run>
+                                <LineBreak />
+
+                                <Run FontSize="14">在制订项目管理计划过程中，要把这三大基准整合成“绩效测量基准”。</Run>
+                                <LineBreak /><LineBreak />
+                                <Run FontSize="14">项目管理计划中与项目生命周期有关的主要内容是，项目生命周期的类型和阶段划分，计划采用的产品开发方法，以及管理层对项目进行审查的时点和内容安排。</Run>
+                                <LineBreak />
+                                <Bold>注意：</Bold>
+                                <Run FontSize="14">项目计划是自下而上编制出来的。计划的执行者必须参与计划的编制工作。</Run>
+                                <LineBreak /><LineBreak />
+                                <Run FontSize="14">项目经理和团队成员也要充分听取其他主要干系人的意见，以便把干系人的需求尽可能地反映在项目计划中。</Run>
+
+
+
+
+
+                            </Paragraph>
+
+                        </FlowDocument>
+                    </FlowDocumentScrollViewer>
+
+
+
+
+                </Expander>
+                
+                <Expander x:Name="expanderXiangMuFanWeiGuanLi" Header="项目范围管理">
+                    <FlowDocumentScrollViewer HorizontalAlignment="Left" Width="600">
+                        <FlowDocument
+                    FontFamily="{DynamicResource MahApps.Fonts.Family.Control}"
+                    FontSize="14" PagePadding="20" TextAlignment="Left" 
+                    Foreground="{DynamicResource MahApps.Brushes.Text}"
+                    LineHeight="20">
+                            <Paragraph>
+                                <Bold></Bold>
+                                
+                                <Bold FontSize="20">流程1：规划范围管理</Bold>
+                                <Figure HorizontalAnchor="ContentRight" VerticalAnchor="ContentCenter">
+                                    <BlockUIContainer>
+                                        <Image
+            Width="450"
+            Height="200"
+            Source="/Images/Document/范围/规划范围管理.png" />
+                                    </BlockUIContainer>
+                                </Figure>
+                                <LineBreak />
+
+                                <LineBreak />
+                                <LineBreak />
+                                仅开展一次或仅在预定义时点开展的项目管理过程，尽量保持不变。
+                                <LineBreak />
+                                说明：编制范围管理计划和需求管理计划。
+                                <LineBreak />
+                                在项目章程的指导之下，参考项目管理计划中已有的子计划（如质量管理计划）。
+                                <LineBreak /> 这两个管理计划将作为项目管理计划的组成部分，用于指导接下的内容。
+
+                                <LineBreak />
+                                <LineBreak />
+                                <Bold FontSize="20">流程2：收集需求</Bold>
+                                <Figure HorizontalAnchor="ContentRight" VerticalAnchor="ContentCenter">
+                                    <BlockUIContainer>
+                                        <Image
+            Width="450"
+            Height="200"
+            Source="/Images/Document/范围/收集需求.png" />
+                                    </BlockUIContainer>
+                                </Figure>
+                                <LineBreak />
+                                仅开展一次或仅在预定义时点开展的项目管理过程，尽量保持不变。
+                                <LineBreak />
+                                <Run  FontWeight="Bold">1、定义</Run>
+                                <LineBreak />
+                                收集需求旨在使需求明确化、具体化和书面化。
+                                <LineBreak />
+                                需求必须是可测量的、文档化的。收集来的需求，必须记录下来，形成需求文件，同时编制需求跟踪矩阵。
+                                <LineBreak />
+                                <LineBreak /> 需求文件是定义、管理和控制项目范围的基础。
+                                <LineBreak />
+
+                                需求跟踪矩阵是用来动态跟踪、监控需求的实现情况的，将作为一种项目文件用作确认范围和控制范围过程的输入。 重复开展本过程时，需要参考已记录在经验教训登记册（一种项目文件）中的经验教训。
+
+                                <LineBreak />
+                                <Run  FontWeight="Bold">2、类别</Run>
+                                <LineBreak />
+                                为了更好地管理需求，可以把需求归为以下类别：商业需求、干系人需求、解决方案需求、过渡和就绪需求、项目需求、质量需求。
+                                <LineBreak />
+                                <LineBreak />
+                                <Bold FontSize="20">流程3：定义范围</Bold>
+                                <Figure HorizontalAnchor="ContentRight" VerticalAnchor="ContentCenter">
+                                    <BlockUIContainer>
+                                        <Image
+            Width="450"
+            Height="200"
+            Source="/Images/Document/范围/定义范围.png" />
+                                    </BlockUIContainer>
+                                </Figure>
+                                <LineBreak />
+                                仅开展一次或仅在预定义时点开展的项目管理过程，尽量保持不变。
+                                <LineBreak />
+                                说明：编制项目范围说明书，划定项目范围边界
+
+                                <Run FontWeight="Bold">项目范围说明书的主要内容包括：</Run>
+                                <LineBreak />
+                                ·产品范围描述。细化项目章程和需求文件中的产品范围。
+                                <LineBreak />
+                                ·可交付成果。项目必须提交出的中间及最终可交付成果。以后还要在创建WBS过程中进一步细分。
+                                <LineBreak />
+                                ·验收标准。可交付成果必须满足的标准。
+                                <LineBreak />
+                                ·项目除外责任。
+                                <LineBreak />
+                                <LineBreak />
+
+
+                                <Bold FontSize="20">流程4：创建WBS</Bold>
+                                <Figure HorizontalAnchor="ContentRight" VerticalAnchor="ContentCenter">
+                                    <BlockUIContainer>
+                                        <Image
+            Width="450"
+            Height="200"
+            Source="/Images/Document/范围/创建wbs.png" />
+                                    </BlockUIContainer>
+                                </Figure>
+                                仅开展一次或仅在预定义时点开展的项目管理过程，尽量保持不变。
+                                <LineBreak />
+                                <LineBreak />
+                                说明：确定项目范围边界内的具体可交付成果，并加以解释工作分解结构，顾名思义，是把整个项目逐层分解到较小的、便于管理的要素——可交付成果。
+                                <LineBreak />
+                                <LineBreak />
+                                1、WBS 中的任何工作都是必须做的。如果有多余的，必须经过变更控制程序把它去掉，才能不做。
+                                <LineBreak /> WBS 之外的任何工作都是必须不做的。如果要做，必须先经过变更控制程序把它加进去。
+                                <LineBreak />
+                                <LineBreak />
+                                2、在编制WBS的同时，应该编制WBS词典，对每个WBS 要素进行解释。
+                                <LineBreak />
+                                3、一般情况下，工作分解结构应控制在4 ～6 层。
+                                <LineBreak />
+
+                                利用分解技术，把项目分解成较小的可交付成果和相关工作。
+                                <LineBreak />
+                                <LineBreak />
+                                <Run  FontWeight="Bold">分解可按下面几个步骤进行：</Run>
+                                <LineBreak />
+                                1. 识别项自的全部可交付成果。应该用多种方法识别可交付成果，防止遗漏。
+                                <LineBreak />
+                                2. 分析可交付成果之间的从属关系，确定W B S 的编排方式。
+                                <LineBreak />
+                                3. 把可交付成果从大到小、按隶属关系排列。
+                                <LineBreak />
+                                4. 建立W B S 编号系统，对每个W B S 要素编号。
+                                <LineBreak />
+                                5. 自下而上检查工作分解是否符合100% 规则，做必要修改。
+                                <LineBreak />
+
+
+
+
+
+
+
+
+
+
+
+
+                            </Paragraph>
+                        </FlowDocument>
+                    </FlowDocumentScrollViewer>
+
+
+
+
+                </Expander>
+                
+                <Expander x:Name="expanderXiangMuShiJianGuanLi" Header="项目时间管理">
+
+                    <FlowDocumentScrollViewer HorizontalAlignment="Left" Width="600">
+                        <FlowDocument
+                    FontFamily="{DynamicResource MahApps.Fonts.Family.Control}"
+                    FontSize="14" PagePadding="20" TextAlignment="Left" 
+                    Foreground="{DynamicResource MahApps.Brushes.Text}"
+                    LineHeight="20">
+                            <Paragraph >
+                                <Bold></Bold>
+                                <LineBreak />
+                                <Run FontSize="16" FontWeight="Bold">项目时间管理</Run>
+                                <LineBreak />
+                                <Run FontSize="14">
+                                    说明：在弄清楚要做的各项活动及其相互关系、所需资源的基础上，进行工期估算，编制项目进度计划
+                                </Run>
+                                <LineBreak />
+                                <Run FontSize="16" FontWeight="Bold">流程1：规划进度管理</Run>
+                                <LineBreak />
+                                <Figure HorizontalAnchor="ColumnLeft" VerticalAnchor="ContentCenter">
+                                    <BlockUIContainer>
+                                        <Image
+Width="600"
+Height="150"
+Source="/Images/Document/时间/规划进度管理.png" />
+                                    </BlockUIContainer>
+                                </Figure>
+                                仅开展一次或仅在预定义时点开展的项目管理过程，尽量保持不变。
+                                <LineBreak />
+                                <LineBreak />
+                                进度管理计划的主要内容包括：
+                                    <LineBreak />
+                                    ·进度模型的制定方法。
+                                    <LineBreak />
+                                    ·进度计划的发布周期。
+                                    <LineBreak />
+                                    ·准确程度。
+                                    <LineBreak />
+                                    ·计量单位。
+                                    <LineBreak />
+                                    ·组织程序链接。
+                                    <LineBreak />
+                                    ·进度模型（计划）维护。例如，每两周更新一次进度计划。
+                                    <LineBreak />
+                                    ·控制临界值。
+                                    <LineBreak />
+                                    ·绩效测量规则。测量、考核和预测项目进度绩效的规则。
+                                    <LineBreak />
+                                    ·报告格式。各种进度绩效报告的格式、内容和报送时间。
+                                <LineBreak />
+                                <LineBreak />
+                                把有关数据输入进度模型，即可自动生成进度计划。
+                                <LineBreak />
+
+                                <LineBreak />
+                                <Run FontSize="16" FontWeight="Bold">流程2：定义活动</Run>
+                                <LineBreak />
+                                <Figure HorizontalAnchor="ColumnLeft" VerticalAnchor="ContentCenter">
+                                    <BlockUIContainer>
+                                        <Image
+Width="600"
+Height="300"
+Source="/Images/Document/时间/定义活动.png" />
+                                    </BlockUIContainer>
+                                </Figure>
+                                需要持续开展的过程。
+                                    <LineBreak />
+                                    定义活动过程旨在把工作包分解成进度活动，列出进度活动的各种属性，确定将随同一系列进度活动的完成而实现的里程碑。
+                                <LineBreak />
+                                <LineBreak />
+                                排列活动顺序过程则基于定义活动过程的成果，绘制项目进度网络图。
+                                <LineBreak />
+                                <LineBreak />
+                                进度网络图用来做项目活动排序，表明项目从开始到结束的活动流，是项目各活动之间逻辑关系的图示表达。最初的网络图中，没有活动持续时间。随后，添加上持续时间估算，网络图就可用于计算各条路径的工期和项目的总工期。
+                                <LineBreak />
+                                <LineBreak />
+                                注意：
+                                    <LineBreak />
+                                    强制性或选择性；外部关系或内部关系；
+                                    <LineBreak />
+                                    活动之间的逻辑关系可能是强制性或选择性的。如基础建好了才能砌墙壁；或者法律或合同强制的，如合同要求承包商必须先做什么后做什么。
+                                    <LineBreak />
+                                    而软逻辑关系完全在项目团队掌控之中。进行活动排序，要重点针对相互之间具有软逻辑关系的各种活动，以便缩短项目工期。
+
+                                <LineBreak />
+                                <LineBreak />
+                                <Run FontSize="16" FontWeight="Bold">流程3：排列活动顺序</Run>
+                                <LineBreak />
+                                <Figure HorizontalAnchor="ColumnLeft" VerticalAnchor="ContentCenter">
+                                    <BlockUIContainer>
+                                        <Image
+Width="600"
+Height="300"
+Source="/Images/Document/时间/排列活动顺序.png" />
+                                    </BlockUIContainer>
+                                </Figure>
+                                <Run FontSize="14">
+                                    需要持续开展的过程。</Run>
+                                    <LineBreak />
+                                    1、紧前关系绘图法（也可译成“前导图法”）用节点表示活动，把活动名称及相关信息表示在节点上。
+                                    <LineBreak />
+                                    2、箭线绘图法（Activity-On-Arrow，AOA）用箭线表示活动，把活动名称及相关信息表示在箭线上。
+                                <Figure HorizontalAnchor="ContentRight" VerticalAnchor="ContentCenter">
+                                    <BlockUIContainer>
+                                        <Image
+Width="500px"
+Height="150px"
+Source="/Images/Document/时间/排列方法对比.png" />
+                                    </BlockUIContainer>
+                                </Figure>
+                                <LineBreak />
+                                <Run FontSize="16" FontWeight="Bold">流程4：估算活动资源</Run>
+                                <LineBreak />
+                                <Figure HorizontalAnchor="ColumnLeft" VerticalAnchor="ContentCenter">
+                                    <BlockUIContainer>
+                                        <Image
+Width="600"
+Height="300"
+Source="/Images/Document/时间/估算活动资源.png" />
+                                    </BlockUIContainer>
+                                </Figure>
+                                <Run FontSize="14">
+                                    需要定期开展的过程
+                                </Run>
+
+                                
+                                <LineBreak />
+                            </Paragraph>
+
+                            <Paragraph>
+                                <LineBreak />
+                                <Run FontSize="16" FontWeight="Bold">流程5：估算活动持续时间</Run>
+                                <LineBreak />
+                                <Figure HorizontalAnchor="ColumnLeft" VerticalAnchor="ContentCenter">
+                                    <BlockUIContainer>
+                                        <Image
+Width="600"
+Height="300"
+Source="/Images/Document/时间/估算活动持续时间.png" />
+                                    </BlockUIContainer>
+                                </Figure>
+                                <Run FontSize="14"></Run>
+                                    
+                                        <LineBreak />
+                                这个输出中既包含了“活动”持续时间估算，也包含了“阶段”和“项目”持续时间估算，这主要是因为不能孤立地对每个活动估算持续时间。
+                                <LineBreak /><LineBreak /> 估算“活动”的持续时间，往往需要与估算“阶段”或“项目”的持续时间进行循环互动。
+                                        <LineBreak />
+                                        编制项目计划过程中，应该由熟悉该活动的团队成员来估算活动持续时间。
+                                        <LineBreak />
+                                        1、类比估算，指根据过去类似项目推理。
+                                        <LineBreak />
+                                        2、自下而上估算，逐层向上汇总。
+                                        <LineBreak />
+                                        3、参数估算，建立数学公式（模型）来计算工期，常见的两种参数估算方法是回归分析和学习曲线。
+                                        <LineBreak />
+                                        4、三点估算法，叫PERT估算法。在估算活动工期时考虑三种可能的情况（最坏、一般和最好），得出最悲观工期、最可能工期和最乐观工期，再据此计算出期望工期（平均工期）。
+                                
+
+
+
+                            </Paragraph>
+
+                            <Paragraph>
+                                <Run FontSize="16" FontWeight="Bold">流程6：制定进度计划</Run>
+                                <LineBreak />
+                                <Figure HorizontalAnchor="ContentRight" VerticalAnchor="ContentCenter">
+                                    <BlockUIContainer>
+                                        <Image
+Width="500"
+Height="500"
+Source="/Images/Document/时间/制定进度计划.png" />
+                                    </BlockUIContainer>
+                                </Figure>
+                                <Run FontSize="14"></Run>
+                                 <LineBreak />
+                                    需要持续开展的过程。
+
+
+                                <LineBreak />
+                                <LineBreak />
+                                <Run FontSize="16" FontWeight="Bold">1、基本分析。</Run>
+                                <LineBreak />
+                                在编制项目进度计划的同时，需要确定哪些数据是进度数据（Schedule Data），以便将来通过控制这些数据来控制项目进度，或者通过修改这些数据来修改进度计划。
+                                <LineBreak />
+                                <LineBreak />
+                                详细进度计划通常用网络图（常用节点图或逻辑横道图）来表示。进度网络图画出来之后，加上所估算的持续时间，再放到日历上去，就可以形成项目的详细进度计划，显示每项进度活动的计划开始日期与计划完成日期。详细进度计划供项目团队实际开展项目活动使用。
+                                <LineBreak />
+                                <LineBreak />
+                                可参考PMP，采用按如下规则来选择使用网络图、横道图或里程碑图：
+                                        <LineBreak />
+                                        ·如需显示活动之间的逻辑关系、显示项目从开始到结束的工作流，请用网络图。
+                                        <LineBreak />
+                                        ·如需了解项目内外部之间的关键接口，请用里程碑图。
+                                        <LineBreak />
+                                        ·如需向管理层或客户汇报项目进度计划或实际进展情况，请用里程碑图或横道图。
+                                        <LineBreak />
+                                        ·如需追踪活动进度，请用横道图。
+                                <LineBreak />
+                                <LineBreak />
+                                进度活动是在详细进度计划中被列出来的最低层级的各项活动。
+                                <LineBreak />
+                                <LineBreak />
+                                <Run FontSize="16" FontWeight="Bold">2、进度网络分析的内容，5种工具</Run>
+                                <Figure HorizontalAnchor="ContentRight" VerticalAnchor="ContentCenter">
+                                    <BlockUIContainer>
+                                        <Image
+Width="500"
+Height="200"
+Source="/Images/Document/时间/制定计划.png" />
+                                    </BlockUIContainer>
+                                </Figure>
+                                <LineBreak />
+                                <LineBreak />
+                                ·先用关键路径法编制出理论上可行的进度计划。
+                                <LineBreak />
+                                <LineBreak />
+                                ·再用资源优化技术把上述计划调整成实际上也可行的。
+                                <LineBreak />
+                                <LineBreak />
+                                ·再使用提前量与滞后量和进度压缩来优化进度计划（缩短工期）。
+                                <LineBreak />
+                                <LineBreak />
+                                ·对于复杂项目，还需要用数据分析（包括假设情景分析和模拟）来进一步考察进度计划的可行性。
+                                <LineBreak />
+                                <LineBreak />
+                                相应解释如下：
+                                        <LineBreak />
+                                        1、关键路径是项目进度计划中总工期最长的路径，决定着项目的最短工期。关键路径可能不止一条，关键路径可能发生变化。浮动时间为0。
+                                        <LineBreak />
+                                        2、资源优化技术，资源限制（影响工期），或资源平滑（Resource Smoothing），（在浮动时间允许的范围内，在项目不同时间段调剂资源分配）。
+                                        <LineBreak />
+                                        3、进度压缩技术，包括赶工和快速跟进。赶工，如安排加班或使用额外资源。快速跟进，是指把关键路径上本应先后顺序进行的工作调整为至少部分并行。一般情况下，赶工的缺点是直接成本的增加，快速跟进的缺点导致返工风险。
+                                        <LineBreak />
+                                        4、数据分析，有两种常用的数据分析技术：假设情景分析和蒙特卡洛模拟。
+                                
+                            </Paragraph>
+
+                        </FlowDocument>
+                    </FlowDocumentScrollViewer>
+
+
+
+
+
+
+                </Expander>
+                
+                <Expander x:Name="expanderXiangMuChengBenGuanLi" Header="项目成本管理">
+                    <FlowDocumentScrollViewer HorizontalAlignment="Left" Width="600">
+                        <FlowDocument
+                    FontFamily="{DynamicResource MahApps.Fonts.Family.Control}"
+                    FontSize="14" PagePadding="20" TextAlignment="Left" 
+                    Foreground="{DynamicResource MahApps.Brushes.Text}"
+                    LineHeight="20">
+                           
+
+                            <Paragraph>
+                                
+                                <Run FontSize="16" FontWeight="Bold">项目成本管理</Run>
+                                <LineBreak />
+                                
+                                <LineBreak />
+                                <Run FontSize="16" FontWeight="Bold">流程1：规划成本管理</Run>
+                                <LineBreak /><Figure HorizontalAnchor="ColumnLeft" VerticalAnchor="ContentCenter">
+                                    <BlockUIContainer>
+                                        <Image
+            Width="400"
+            Height="200"
+            Source="/Images/Document/成本/规划成本管理.png" />
+                                    </BlockUIContainer>
+                                </Figure>
+                                <Run FontSize="14"></Run>
+                                    仅开展一次或仅在预定义时点开展的项目管理过程，尽量保持不变。
+                                    <LineBreak />
+                                    说明：根据项目范围和进度计划，并考虑所需资源情况，编制项目成本预算
+                                <LineBreak />
+                                <Bold></Bold>
+                                <LineBreak />
+                                1.按工作内容进行的成本管理是依据工作分解结构进行的，
+                                    <LineBreak />
+                                    而按时间段进行的成本管理是按项目进度计划以现金流量表的形式进行的。
+                                    <LineBreak />
+                                    在项目执行过程中，需要依靠现金流入（投资）来维持一个现金库，用于满足现金流出的需要。
+                                <LineBreak />
+                                <LineBreak />
+                                2、编制项目预算，应该采用自下而上的方法，按如下主要步骤进行：
+                                    <LineBreak />
+                                    ·第1 步，计算出各活动所需要的成本，包括应急储备。
+                                    <LineBreak />
+                                    ·第2 步，汇总得出工作包的成本，包括应急储备。
+                                    <LineBreak />
+                                    ·第3 步，把各工作包的成本汇总，得到控制账户的成本，包括应急储备。
+                                    <LineBreak />
+                                    ·第4 步，把各控制账户的成本汇总，得到项目的成本，包括应急储备。
+                                    <LineBreak />
+                                    ·第5 步，对成本汇总的结果（包括应急储备）进行验证和调整，并报领导审批，得到项目成本基准。
+                                    <LineBreak />
+                                    ·第6 步，增加一定的管理储备，得出项目预算。
+                                <LineBreak />
+                                <LineBreak />
+                                3、成本管理计划的主要内容如下：测量单位。精确程度。准确程度。组织程序链接。控制临界值。绩效测量规则。报告格式。其他细节。
+                                
+                                <LineBreak />
+                                <Run FontSize="16" FontWeight="Bold">流程2：估算成本</Run>
+                                <LineBreak />
+                                <Figure HorizontalAnchor="ColumnLeft" VerticalAnchor="ContentCenter">
+                                    <BlockUIContainer>
+                                        <Image
+            Width="400"
+            Height="400"
+            Source="/Images/Document/成本/估算成本.png" />
+                                    </BlockUIContainer>
+                                </Figure>
+                                <Run FontSize="14"></Run>
+                                    需要定期开展的过程
+                                    <LineBreak />
+                                    应该由最熟悉相应活动或工作包的人来估算。应该计算所需的全部资源的成本。
+
+                                <LineBreak />
+                                <LineBreak />
+                                <Run FontSize="16" FontWeight="Bold">流程3：制定预算</Run>
+                                <LineBreak />
+                                <Figure HorizontalAnchor="ColumnLeft" VerticalAnchor="ContentCenter">
+                                    <BlockUIContainer>
+                                        <Image
+            Width="400"
+            Height="400"
+            Source="/Images/Document/成本/制定预算.png" />
+                                    </BlockUIContainer>
+                                </Figure>
+                                <Run FontSize="14"></Run>
+                                    仅开展一次或仅在预定义时点开展的项目管理过程，尽量保持不变。
+                                    <LineBreak />
+                                制定预算过程是把各活动或工作包的成本逐层向上汇总，并对汇总结果进行验证和调整，报领导审批，得到项目成本基准；再增加一定的管理储备，得到项目预算。
+                                <LineBreak /> 可用于平衡项目进度与成本之间的相互冲突。
+                                
+                            </Paragraph>
+
+                        </FlowDocument>
+                        </FlowDocumentScrollViewer>
+
+
+                </Expander>
+                
+                <Expander x:Name="expanderXiangMuZhiLiangGuanLi" Header="项目质量管理">
+                    <FlowDocumentScrollViewer HorizontalAlignment="Left" Width="600">
+                        <FlowDocument
+                    FontFamily="{DynamicResource MahApps.Fonts.Family.Control}"
+                    FontSize="14" PagePadding="20" TextAlignment="Left" 
+                    Foreground="{DynamicResource MahApps.Brushes.Text}"
+                    LineHeight="20">
+                          
+
+                            <Paragraph>
+                                <Run FontSize="16" FontWeight="Bold">项目质量管理</Run>
+                                <LineBreak />
+                                <LineBreak />
+                                <Run FontSize="16" FontWeight="Bold">流程1：规划质量管理</Run>
+                                <LineBreak /><Figure HorizontalAnchor="ColumnLeft" VerticalAnchor="ContentCenter">
+                                    <BlockUIContainer>
+                                        <Image
+            Width="300"
+            Height="400"
+            Source="/Images/Document/质量/规划质量管理.png" />
+                                    </BlockUIContainer>
+                                </Figure>
+                               
+                                    仅开展一次或仅在预定义时点开展的项目管理过程，尽量保持不变。
+                                <LineBreak />
+                                <LineBreak />
+                                1、质量管理理念。在进行项目规划和产品设计时，必须认真考虑对工作过程和工作成果的质量要求，把质量融入项目规划和产品设计中。
+                                <LineBreak /> 质量首先是规划和设计出来的。质量合格，那么失败成本就是零。
+                                <LineBreak /> 预防胜于检查。持续改进，全面质量管理。准时制。
+                                <LineBreak />
+                                <LineBreak />
+                                2、内容
+                                    <LineBreak />
+                                质量管理计划的主要内容包括：
+                                <LineBreak />
+                                <LineBreak />
+                                    （1）项目的质量政策。可以直接引用组织的质量政策，也可以对组织的质量政策略加修改。
+                                    <LineBreak />
+                                    （2）项目的质量目标。包括项目的总体质量要求和高层级质量标准，如项目必须符合某个行业标准中的规定。
+                                    <LineBreak />
+                                    （3）质量角色和职责。谁应该对项目质量承担什么责任。
+                                    <LineBreak />
+                                    （4）质量管理程序、活动和工具。用于履行职责和实现目标的程序、活动和工具。
+                                    <LineBreak />
+                                    （5）对工作过程和成果的质量评审。
+                                <LineBreak />
+                                <LineBreak />
+                                3、本过程的工具可以概述为：
+                                <LineBreak /> 先使用数据收集来收集数据，再使用数据分析来分析数据，最后使用决策来做出关于质量管理方法、质量标准和质量测量指标的决定。
+                                <LineBreak />
+                                <LineBreak />
+                                常见的数据分析方法有
+                                <LineBreak /> 成本效益分析，了解各种不同质量管理方案或质量标准所需的成本和能产生的效益。较高的质量标准需要较高的成本，可以用边际分析的方法，确定最佳质量标准。
+                                <LineBreak />
+                                <LineBreak />
+                                质量成本分析，了解各种可能的质量成本组合方案（不同种类的质量成本各占多大比重）。一致性成本和不一致性成本；预防成本、评估成本和失败（缺陷）成本。
+                                    <LineBreak />
+                                    数据表现技术中包括流程图、逻辑数据模型、矩阵图和思维导图。
+                                <Figure HorizontalAnchor="ColumnLeft" VerticalAnchor="ContentCenter">
+                                    <BlockUIContainer>
+                                        <Image
+            Width="600"
+            Height="200"
+            Source="/Images/Document/质量/一致性成本.png" />
+                                    </BlockUIContainer>
+                                </Figure>
+                            </Paragraph>
+
+
+                        </FlowDocument>
+                    </FlowDocumentScrollViewer>
+
+                </Expander>
+                
+                <Expander x:Name="expanderXiangMuRenLiZiYuanGuanLi" Header="项目人力资源管理">
+                    <FlowDocumentScrollViewer HorizontalAlignment="Left" Width="600">
+                        <FlowDocument
+                    FontFamily="{DynamicResource MahApps.Fonts.Family.Control}"
+                    FontSize="14" PagePadding="20" TextAlignment="Left" 
+                    Foreground="{DynamicResource MahApps.Brushes.Text}"
+                    LineHeight="20">
+                            <Paragraph>
+                                
+                                    <Run FontSize="16" FontWeight="Bold">项目人力资源管理</Run>
+                                    <LineBreak />
+                                    <Run FontSize="14"></Run>
+                                项目资源管理是指为完成项目而识别、获取和管理所需的人力资源和实物资源。
+                                <LineBreak /> 人力资源是直接从事项目工作（包括管理工作和技术工作）的项目团队成员。
+                                <LineBreak /> 实物资源是直接用于项目的材料、设备和设施。项目目标的实现，无疑需要资源的保证。
+                                        <LineBreak />
+                                        由于实物资源在时间和成本管理中内容类似，故重点关注人力资源。
+                                        <LineBreak />
+                                        团队氛围和管理制度。
+
+                                <LineBreak />
+                                <LineBreak />
+                                <Run FontSize="16" FontWeight="Bold">流程1：规划人力资源管理</Run>
+                                <LineBreak />
+                                <Figure HorizontalAnchor="ColumnLeft" VerticalAnchor="ContentCenter">
+                                    <BlockUIContainer>
+                                        <Image
+Width="400"
+Height="300"
+Source="/Images/Document/人力/规划人力资源管理.png" />
+                                    </BlockUIContainer>
+                                </Figure>
+                                <Run FontSize="14">
+                                        本过程旨在编制资源管理计划，规定将如何估算、获取、使用和管理项目资源，包括人力资源和实物资源。
+                                </Run>
+                                <LineBreak />
+                                <LineBreak />
+                                对于人力资源，本过程还要制定团队章程，规定项目团队的核心价值观、行为规范和工作规则。团队章程使团队成员对什么行为是可接受或不可接受的，建立和保持基本一致的认识。
+                                <LineBreak />
+                                <LineBreak />
+                                组织理论是关于组织中的个人、小组、团队、部门，以及整个组织应该如何行动的学问。在理论的指导下编制团队资源管理计划，效率更高（编计划更容易），效果更好（计划的质量更好）。
+                                <LineBreak />
+                                <LineBreak />
+                                <Bold>数据表现包括传统的层级型，责任分配矩阵，文本型。</Bold>
+                                
+                                <LineBreak />
+                                
+                                注意：责任分配矩阵以R A C I 形式呈现，为了明显区分，可以把Authority翻译成“职权”，把Responsibility翻译成“职责”，把Accountability翻译成“终责”。
+                                        <LineBreak />
+                                        把工作授权给下级去做，只是向下级转移了执行的责任，而无法转移对工作的终责。
+                                <LineBreak />
+                                <LineBreak />
+
+                                关于授权，需要注意：不能减轻自己的终责，不能授权整合管理工作，不能授权奖惩工作，必须明确说明你对被授权工作的要求。
+                                    
+                               
+
+
+
+
+
+
+
+                                
+                                <LineBreak />
+                            </Paragraph>
+                        </FlowDocument>
+                    </FlowDocumentScrollViewer>
+
+                </Expander>
+                
+                <Expander x:Name="expanderXiangMuGouTongGuanLi" Header="项目沟通管理">
+                    <FlowDocumentScrollViewer HorizontalAlignment="Left" Width="600">
+                        <FlowDocument
+                    FontFamily="{DynamicResource MahApps.Fonts.Family.Control}"
+                    FontSize="14" PagePadding="20" TextAlignment="Left" 
+                    Foreground="{DynamicResource MahApps.Brushes.Text}"
+                    LineHeight="20">
+                            <Paragraph>
+                                <Bold></Bold>
+                                
+                                    <Run FontSize="16" FontWeight="Bold">项目沟通管理</Run>
+                                    <LineBreak />
+                                    <Run FontSize="14"></Run>
+                                项目经理的大多数时间（甚至高达90%）用于沟通。
+                                <LineBreak /> 他要通过沟通来协调，通过协调来整合。项目经理作为项目沟通的核心，应该通过以下措施来促进有效沟通：
+                                <LineBreak /> 设法消除障碍，紧密式矩阵，提高会议效率，提高沟通技巧，建立作战指挥部，充当有效的沟通者。
+
+                                <LineBreak />
+                                <LineBreak />
+                                <Run FontSize="16" FontWeight="Bold">流程1：规划沟通管理</Run>
+                                <LineBreak />
+                                <Figure HorizontalAnchor="ColumnLeft" VerticalAnchor="ContentCenter">
+                                    <BlockUIContainer>
+                                        <Image
+Width="500"
+Height="300"
+Source="/Images/Document/沟通/规划沟通管理.png" />
+                                    </BlockUIContainer>
+                                </Figure>
+
+                                需要定期开展的过程
+                                <LineBreak />
+                                <Bold>1、主要内容</Bold>
+                                ：在了解项目干系人的信息需求、项目本身的需求，以及组织过程资产和事业环境因素，编制沟通管理计划。沟通管理计划应该尽早编制并不断审查和更新。
+                                <LineBreak />
+                                <LineBreak />
+
+                                沟通管理计划也就是沟通计划，包括三大主体内容：
+                                        <LineBreak />
+                                        ·关于沟通管理的程序性规定。
+                                        <LineBreak />
+                                        ·关于将要生成的沟通工件的规定。
+                                        <LineBreak />
+                                        ·关于沟通活动的规定。
+                                        <LineBreak />
+                                        既需要向项目内部的干系人（如团队成员），也需要向项目外部的干系人（如政府部门、用户、媒体）发布信息。
+                                        <LineBreak />
+                                        事先就弄清楚谁在什么时候需要什么信息，有助于项目经理安排好相关的沟通工作，对项目经理处理好与各项目干系人之间的关系非常重要。
+                                        <LineBreak />
+                                
+                                <Bold>2、工具技术</Bold>
+                                <LineBreak />
+                                        需要根据项目的具体情况以及干系人的具体情况，为拟开展的沟通选择合适的沟通技术。被选定的沟通技术，需要写入沟通管理计划。
+                                <LineBreak />
+                                <LineBreak />
+                                可以按下列规则做出选择：
+                                        <LineBreak />
+                                        ·正式书面沟通。适用于复杂、重要的事情，如发布项目章程，发布合同。
+                                        <LineBreak />
+                                        ·正式口头沟通。适用于需要立即得到反馈的重要事情，如合同谈判。
+                                        <LineBreak />
+                                        ·非正式书面沟通。适用于需要在以后查询但不太重要的事情，如用备忘录通知项目周报的提交时间从原来的周一中午12点改为周一上午10点。
+                                        <LineBreak />
+                                        ·非正式口头沟通。适用于既不重要也无须在以后查询的事情，如私下谈话。
+                                <LineBreak />
+                                <LineBreak />
+                                如果需要立即解决问题，就选择口头沟通。如果问题比较重要，口头沟通之后再进行书面确认。如果要批评别人或解决与别人的冲突，最好采用非正式口头沟通；如果不起作用或解决不了，再用正式书面沟通。
+                                <LineBreak />
+                                <LineBreak />
+                                三种沟通方法：交互式沟通，推式沟通，拉式沟通。
+                                    
+                                
+
+
+                               
+                                <LineBreak />
+                            </Paragraph>
+                        </FlowDocument>
+                    </FlowDocumentScrollViewer>
+
+                </Expander>
+                
+                <Expander x:Name="expanderXiangMuFengXianGuanLi" Header="项目风险管理">
+                    <FlowDocumentScrollViewer HorizontalAlignment="Left" Width="600">
+                        <FlowDocument
+                    FontFamily="{DynamicResource MahApps.Fonts.Family.Control}"
+                    FontSize="14" PagePadding="20" TextAlignment="Left" 
+                    Foreground="{DynamicResource MahApps.Brushes.Text}"
+                    LineHeight="20">
+                            <Paragraph>
+                                <Bold></Bold>
+                                <Run FontSize="16" FontWeight="Bold">项目风险管理</Run>
+                                <LineBreak />
+                                <Run FontSize="14"></Run>
+                                    项目是独特的一次性事业，必然存在风险。项目经理必须积极主动地开展项目风险管理，而不只是消极被动地去应对已发生的风险。
+                                <LineBreak /> 风险有两面性，总是与不确定性联系在一起的。只有把整体项目风险控制在可接受的区间内，管理单个项目风险才有意义。
+                                    <LineBreak />
+                                    风险会涉及事件、原因、后果和可能性四要素，风险管理就是围绕风险的事件，进行原因、后果和可能性分析，以便找到管理风险的最佳切入点，把绝对不可控变成相对可控。
+                                <LineBreak />
+                                <LineBreak />
+                                风险类别分类：在编制项目预算时，应该把已知已知风险（已知后果和可能性）可能造成的损失直接列入项目“直接成本”，把已知未知风险（未知后果）可能造成的损失列入“应急储备”，把未知未知风险（从未遇到）可能造成的损失列入“管理储备”。
+                                
+                            </Paragraph>
+                            <Paragraph>
+                                
+                                <Run FontSize="16" FontWeight="Bold">流程1：规划风险管理</Run>
+                                <LineBreak />
+                                <Figure HorizontalAnchor="ColumnLeft" VerticalAnchor="ContentCenter">
+                                    <BlockUIContainer>
+                                        <Image
+Width="600"
+Height="300"
+Source="/Images/Document/fengxian/规划1.png" />
+                                    </BlockUIContainer>
+                                </Figure>
+
+                                仅开展一次或仅在预定义时点开展的项目管理过程，尽量保持不变。
+                                    <LineBreak />
+                                    说明：识别项目风险，分析项目风险，制订风险管理计划
+                                <LineBreak />
+                                <LineBreak /><Bold>风险管理计划应该包括如下主要内容：</Bold>
+                                
+                                    <LineBreak />
+                                    ·风险管理策略。
+                                    <LineBreak />
+                                    ·方法论。
+                                    <LineBreak />
+                                    ·角色和职责安排。
+                                    <LineBreak />
+                                    ·预算和时间安排。
+                                    <LineBreak />
+                                    ·风险类别。
+                                    <LineBreak />
+                                    ·主要干系人的风险偏好。
+                                    <LineBreak />
+                                    ·风险概率和影响定义。
+                                    <LineBreak />
+                                ·概率和影响矩阵。根据风险口（可能性与后果的乘积）对风险进行分级的表格也叫风险级别矩阵。
+                                <LineBreak /> 例如，把风险分成严重、中等、轻微三个级别。相当于用来度量每个风险的严重性的统一尺子。
+                                    <LineBreak />
+                                    ·报告格式。
+                                    <LineBreak />
+                                    ·风险管理跟踪。
+                              
+                            </Paragraph>
+                            <Paragraph>
+                                <Bold></Bold>
+                                <Run FontSize="16" FontWeight="Bold">流程2：识别风险</Run>
+                                <LineBreak />
+                                <Figure HorizontalAnchor="ColumnLeft" VerticalAnchor="ContentCenter">
+                                    <BlockUIContainer>
+                                        <Image
+Width="600"
+Height="350"
+Source="/Images/Document/fengxian/识别风险2.png" />
+                                    </BlockUIContainer>
+                                </Figure>
+
+                                需要持续开展的过程。
+                                <LineBreak />
+                                <LineBreak />
+                                <Bold>1、内容：</Bold>
+                                <LineBreak />
+                                调动众多项目干系人的力量，识别整体项目风险的各种来源，并识别项目面临的各种单个项目风险。
+                                <LineBreak />
+                                <LineBreak />
+                                本过程要回答的问题是：哪些是导致整体项目风险的主要因素？本项目面临哪些单个项目风险？
+                                    <LineBreak />
+                                    识别风险，通常要基于风险管理计划中的方法和程序，并邀请尽可能多的主要干系人参与。不能仅靠少数人来识别风险。
+                                <LineBreak />
+                                <LineBreak />
+                                通常，项目团队先进行风险识别，再由其他干系人来补充和完善。
+                                    <LineBreak />
+                                
+                                <Bold>2、方法：</Bold>
+                                <LineBreak />
+                                    数据收集，包括头脑风暴、核对单和访谈。
+                                    <LineBreak />
+                                    数据分析，包括文件分析、根本原因分析、SWOT分析、假设条件和制约因素分析等，也是识别风险时常用的技术。
+                                    <LineBreak />
+                                    无论使用数据收集或数据分析技术，都应该借助会议、人际关系与团队技能和专家判断。
+                                
+                            </Paragraph>
+
+                            <Paragraph>
+                            <Run FontSize="16" FontWeight="Bold">流程3：实施定性风险分析</Run>
+                                <LineBreak />
+                                <Figure HorizontalAnchor="ColumnLeft" VerticalAnchor="ContentCenter">
+                                    <BlockUIContainer>
+                                        <Image
+Width="500"
+Height="350"
+Source="/Images/Document/fengxian/实施定性3.png" />
+                                    </BlockUIContainer>
+                                </Figure>
+
+                                需要持续开展的过程。
+                                <LineBreak />
+                                <LineBreak />
+                                <Bold>
+                                     定性风险分析的目的是：
+                                </Bold>
+                               
+                                <LineBreak />
+                                ·以主观的方式评价已识别风险的发生可能性、后果和其他情况。
+                                <LineBreak />
+                                ·得到基于定性分析结果的风险排序。
+                                <LineBreak />
+                                ·为每个单个项目风险指定风险责任人。
+                                <LineBreak />
+                                <LineBreak />
+                                ·确定哪些风险需要进一步定量分析，哪些风险可直接进人规划风险应对过程，哪些风险可直接列人观察清单。
+                                <LineBreak />
+                                ·对风险进行归类，指出高风险的项目领域。
+                                <LineBreak />
+                                ·了解风险发展趋势。多次定性分析后，可看出风险发展趋势，如发生可能性是逐渐提高或降低。
+                                <LineBreak />
+                                <LineBreak />
+                                <Bold></Bold>
+                                <Run FontSize="16" FontWeight="Bold">流程4：实施定量风险分析</Run>
+                                <LineBreak />
+                                <Figure HorizontalAnchor="ColumnLeft" VerticalAnchor="ContentCenter">
+                                    <BlockUIContainer>
+                                        <Image
+Width="500px"
+Height="300px"
+Source="/Images/Document/fengxian/实施定量4.png" />
+                                    </BlockUIContainer>
+                                </Figure>
+
+                                需要持续开展的过程。
+                                <LineBreak />
+                                <LineBreak />
+                                <Bold>1、本过程需要做两件事。</Bold>
+                                
+                                <LineBreak /> 一是对被定性分析确认为严重且可量化的单个项目风险做客观的定量分析；
+                                    <LineBreak />
+                                    二是以这些定量分析的结果和全部其他不确定性的情况作为输入数据，对整体项目风险进行定量分析，并握此确定整个项目所需的应急储备。
+                                <LineBreak />
+                                <LineBreak />
+                                <Bold>2、除了专家判断和人际关系与团队技能中的引导技术以外，其他的工具与技术可以按下列顺序使用：</Bold>
+                                
+                                    <LineBreak />
+                                    第一，使用数据收集中的访谈，收集专家们的量化数据
+                                    <LineBreak />
+                                    第二，结合访谈收集的数据和其他来源的数据，使用不确定性表现方式来生成各种适用的概率分布图。概率分布图能够展示各活动的可能工期或成本的分布情况，作为后续定量分析的基础。常用的概率分布图包括贝塔分布、三角分布、均匀分布和正态分布。
+                                    <LineBreak />
+                                    第三，使用数据分析中的影响图、模拟、敏感性分析和决策树分析，进行风险定量分析，得出分析结果。
+                                <LineBreak />
+                                <LineBreak />
+                                最常用的模拟技术是蒙特卡洛模拟，即在电脑上模拟项目实施。
+                                    <LineBreak />
+                                    敏感性分析用来确定某一变量的单位变化对项目的影响程度。
+                                    <LineBreak />
+                                    决策树分析是计算各种备选方案的预期货币价值。
+                            </Paragraph>
+
+                            <Paragraph>
+                                <Bold></Bold>
+                                <Run FontSize="16" FontWeight="Bold">流程5：规划风险应对</Run>
+                                <LineBreak />
+                                <Figure HorizontalAnchor="ColumnLeft" VerticalAnchor="ContentCenter">
+                                    <BlockUIContainer>
+                                        <Image
+Width="500px"
+Height="300px"
+Source="/Images/Document/fengxian/规划应对5.png" />
+                                    </BlockUIContainer>
+                                </Figure>
+
+
+                                需要持续开展的过程。
+                                <LineBreak />
+                                <LineBreak />
+                                <Bold>1、主要内容：</Bold>
+                                <LineBreak /> 制定整体项目风险的应对策略和措施，以及单个项目风险的应对策略和措施。
+                                    <LineBreak />
+                                    单个项目风险的应对措施，既包括风险发生之前的预防措施或促进措施，也包括风险发生之后的应急措施或利用措施。
+                                    <LineBreak />
+                                    即对上述识别风险、实施定性风险分析、实施定量风险分析等过程流程的反复展开，最后时不时更新风险登记册和风险报告。更新内容见文件。
+                                <LineBreak />
+                                <LineBreak />
+                                对于整个项目的应急储备，如果没有任何可靠的依据，就按项目总成本的10%计算。这是一个经验式规则。
+                                <LineBreak />
+                                <LineBreak />
+                                <Bold>2、通过数据收集技术中的访谈，了解各主要干系人对风险应对策略和措施的喜好。</Bold>
+                                <LineBreak />
+                                <LineBreak />
+                                通过人际关系与团队技能中的引导，引导干系人对应对策略和措施达成一致意见。
+                                <LineBreak />
+                                <LineBreak />
+                                通过数据分析中的备选方案分析，分析多种备选的应对策略和措施。开展备选方案分析时，需要进行成本效益分析，以选择效益成本比最高的策略和措施。
+                                <LineBreak />
+                                <LineBreak /> 决策技术中的多标准决策分析，也是用来做备选方案分析的一种具体技术，即从多种标准入手对多个方案进行排序，以选择排序靠前的方案。
+                                <LineBreak />
+                                <LineBreak />
+                                
+                                <Bold>威胁5应对策略：上报，规避，减轻，转移，接受。</Bold>
+                                <LineBreak />
+                                <LineBreak />
+                                ·上报。
+                                 对于应该在更高的项目集、项目组合或整个组织层面来处理的风险，项目经理应该采取上报策略。
+                                <LineBreak />
+                                <LineBreak />
+                                ·规避。通过消灭原因来消除风险，如取消高风险的工作；或者，把项目与某个风险隔离开来，如抢在雨季到来之前完成项目，使项目不受雨季的影响。采取规避策略，通常要改变项目计划。
+                                <LineBreak />
+                                <LineBreak />
+                                ·减轻。设法降低风险发生的概率或（和）后果。例如，使用成熟技术，使用熟练工人，对机器操作人员进行培训，开车时系好安全带。
+                                <LineBreak />
+                                <LineBreak />
+                                ·转移。用一定的代价，把应对风险的责任与风险的后果转移给第三方。通常，需要签署风险转移合同。例如，购买保险，把工作外包，业主要求承包商提交由银行出具的履约担保。
+                                <LineBreak />
+                                <LineBreak />
+                                ·接受。不主动管理风险。对于可承受的风险或无法用其他策略的风险，可以使用接受策略。接受又分成两种：一种是被动接受，即不采取任何行动，顺其自然，风险发生后再说；另一种是主动接受，即预留应急储备，以便风险发生后使用。
+                                <LineBreak />
+                                <LineBreak />
+                                <Bold>机会应对5策略：上报，开拓，分享，提高，接受。</Bold>
+                                
+                                    <LineBreak />
+                                    ·上报。把机会上报给更高层去管理。
+                                    <LineBreak />
+                                    ·开拓。采取措施，确保机会肯定出现。与威胁规避完全相反。
+                                    <LineBreak />
+                                    ·分享。与其他方一起共同促进机会的发生，共享机会发生的利益。
+                                    <LineBreak />
+                                    ·提高。采取措施，提高机会出现的可能性或影响。
+                                    <LineBreak />
+                                    ·接受。不主动促进机会发生，只是在机会自然发生时去利用机会。
+                                <LineBreak />
+                                <LineBreak />
+                                对于整体项目的风险，也可以应用这些策略。
+                               
+                            </Paragraph>
+
+
+
+                        </FlowDocument>
+                        </FlowDocumentScrollViewer>
+
+
+
+
+                </Expander>
+                
+                <Expander x:Name="expanderXiangMuCaiGouGuanLi" Header="项目采购管理">
+                    <FlowDocumentScrollViewer HorizontalAlignment="Left" Width="600">
+                        <FlowDocument
+                    FontFamily="{DynamicResource MahApps.Fonts.Family.Control}"
+                    FontSize="14" PagePadding="20" TextAlignment="Left" 
+                    Foreground="{DynamicResource MahApps.Brushes.Text}"
+                    LineHeight="20">
+                            <Paragraph>
+
+                                <Bold></Bold>
+                                <Run FontSize="16" FontWeight="Bold">项目采购管理</Run>
+                                <LineBreak />
+
+                                项目采购管理是指项目执行组织从外部获取产品、服务或成果来最优满足项目的需求。由于项目的复杂性，项目执行组织往往不可能依靠自身的力量完成全部项目工作，而是需要把某些项目工作“外包”给其他组织进行。“外包”通常是以合同的形式进行的。
+                                <LineBreak />
+                                <LineBreak />
+
+                                <Bold>1、采购基础</Bold>
+                                <LineBreak />
+                                1.1合同的性质：平等性，法律性。合同一旦签订，其中的所有条款都必须执行。
+                                <LineBreak />
+                                <LineBreak />
+                                1.2合同成立  要约和承诺
+                                <LineBreak />
+                                要约，又称发盘或报价，是一方当事人向另一方当事人所做的、邀请订立合同的意思表示；
+                                <LineBreak />
+                                承诺则是被要约人无条件、完全地同意要约人的要约，愿意按此成立合同的意思表示。
+                                <LineBreak />
+                                如果双方当事人具有签订某合同的权利能力和行为能力，并且合同具有合法的目的，则在经过要约和承诺之后合同即告成立。只要完成了要约和承诺，即便没有一份双方都签过字的协议，合同也已成立。
+                                <LineBreak />
+                                <LineBreak />
+                                1.3合同通过许多具体条款来明确双方的权利义务关系。
+                                <LineBreak />
+                                合同应当具备以下几个主要条款：
+                                <LineBreak />
+                                ·标的（指货物、劳务、工程项目等）。
+                                <LineBreak />
+                                ·数量和质量。这是对标的的具体要求。
+                                <LineBreak />
+                                ·价款或酬金。
+                                <LineBreak />
+                                ·履行合同的期限、地点和方式。
+                                <LineBreak />
+                                ·违约责任。
+                                <LineBreak />
+                                (*)争议解决条款。
+                                <LineBreak />
+                                <LineBreak />
+
+                                <Run FontWeight="Bold">2、三种基本的合同类型，即总价合同、成本补偿合同和工料合同。</Run>
+                                <LineBreak />
+
+
+                                <Bold>总价合同</Bold>
+                                <LineBreak />
+                                总价合同是指对合同工作规定一个总价。从成本风险的角度来说，业主的成本风险最低，基本没有成本风险。在这种合同下，买方必须准确定义工作范围。只有工作范围很清楚的项目，才可以采用总价合同。如果工作范围发生变化，通常允许调整总价。
+                                <LineBreak />
+                                <LineBreak />
+                                分有三类，固定总价合同，总价加经济价格调整合同，总价加激励费用合同；
+                                <LineBreak />
+                                <LineBreak /> 需要规定:
+                                <LineBreak />
+                                ·目标成本。正常情况下项目将要花费的成本。
+                                <LineBreak />
+                                ·目标费用（利润）。如果卖方以目标成本完成项目，将可以获得的利润。
+                                <LineBreak />
+                                ·目标价格。目标成本与目标费用之和。
+                                <LineBreak />
+                                ·最悲观成本。如果卖方没有任何管理或技术上的失误，项目可能发生的最大成本数。如果卖方实际成本超出此数，则认为超出部分是卖方失误造成的，全部由卖方独自承担。由于最悲观成本是假设的最大成本数值。
+                                <LineBreak />
+                                ·成本分担比例。卖方实际成本（不得超过最悲观成本）超过目标成本的部分，买方和卖方按比例分担。
+                                <LineBreak />
+                                ·最高限价（封顶价）。
+                                <LineBreak />
+                                <LineBreak />
+
+                                <Bold>成本补偿合同</Bold>
+                                <LineBreak />
+                                指以卖方从事项目工作的实际成本作为付款的基础，即成本实报实销。这种合同下，买方的成本风险最大。
+                                <LineBreak />
+                                这种合同适用于买方仅知道要一个什么产品但不知道具体工作范围的情况，也就是工作范围很不清楚的项目。
+                                <LineBreak /> 当然，成本补偿合同也适用于买方特别信得过卖方、想要与卖方全面合作的情况。
+                                <LineBreak />
+                                <LineBreak />
+
+                                <Bold>工料合同</Bold>
+                                <LineBreak />
+                                工料合同适用于规模小、工期短、不复杂的工作，
+                                <LineBreak />
+                                工料合同，也叫“时间和手段合同”，是指按项目工作所花费的实际工时数和材料数按事先确定的单位工时费用标准（单价）和单位材料费用标准（单价）进行付款。
+                                <LineBreak />
+                                这类合同适用于工作性质清楚但具体的工作量无法确定的采购。这种合同下，买方与卖方分担成本风险，即买方承担工作量的风险，卖方承担单价的风险。
+
+                            </Paragraph>
+                            <Paragraph>
+                                <Bold></Bold>
+                                    <Run FontSize="16" FontWeight="Bold">流程1：规划采购管理</Run>
+                                <LineBreak />
+                                <Figure HorizontalAnchor="ColumnLeft" VerticalAnchor="ContentCenter">
+                                    <BlockUIContainer>
+                                        <Image
+Width="400"
+Height="450"
+Source="/Images/Document/采购/规划采购管理.png" />
+                                    </BlockUIContainer>
+                                </Figure>
+
+                                仅开展一次或仅在预定义时点开展的项目管理过程，尽量保持不变。
+                                        <LineBreak />
+                                        说明：确定采购需要，编制招标文件和其他配套文件
+                                        <LineBreak />
+                                        方法工具：
+                                        <LineBreak />
+                                        在本过程中，按以下基本顺序开展如下工作：
+                                        <LineBreak />
+                                        （1）编制采购管理计划。
+                                        <LineBreak />
+                                        （2）做出自制或外购决策。
+                                        <LineBreak />
+                                        （3）制定采购策略。
+                                        <LineBreak />
+                                        （4）编制采购工作说明书。
+                                        <LineBreak />
+                                        （5）编制招标文件。
+                                        <LineBreak />
+                                        （6）编制独立成本估算，即俗称的“标底”。
+                                        <LineBreak />
+                                        （7）编制供方选择标准，即评标标准。
+                                        <LineBreak />
+                                        （8）汇编出招标文件包。
+                                        <LineBreak />
+                                        各采购过程主要工作：
+                                
+
+
+
+
+                                <Figure HorizontalAnchor="ContentCenter" VerticalAnchor="ContentCenter">
+                                    <BlockUIContainer>
+                                        <Image
+            Width="500px"
+            Height="200px"
+            Source="/Images/Document/采购/采购主要工作.png" />
+                                    </BlockUIContainer>
+                                </Figure>
+                                <LineBreak />
+                            </Paragraph>
+                            
+                            
+                            
+                            
+                            
+                            
+                        </FlowDocument>
+                    </FlowDocumentScrollViewer>
+
+
+
+                </Expander>
+                
+                <Expander x:Name="expanderXiangMuGanXianRenGuanLi" Header="项目干系人管理">
+                    <FlowDocumentScrollViewer HorizontalAlignment="Left" Width="600">
+                        <FlowDocument
+                    FontFamily="{DynamicResource MahApps.Fonts.Family.Control}"
+                    FontSize="14" PagePadding="20" TextAlignment="Left" 
+                    Foreground="{DynamicResource MahApps.Brushes.Text}"
+                    LineHeight="20">
+                            <Paragraph>
+                               
+                               
+                                    <Run FontSize="16" FontWeight="Bold">项目干系人管理</Run>
+                                <LineBreak />
+                                <LineBreak />
+                                流程1：规划干系人管理
+                                <LineBreak />
+                                <Figure HorizontalAnchor="ColumnLeft" VerticalAnchor="ContentCenter">
+                                    <BlockUIContainer>
+                                        <Image
+Width="600"
+Height="250"
+Source="/Images/Document/干系人/规划干系人管理.png" />
+                                    </BlockUIContainer>
+                                </Figure>
+                                需要定期开展的过程
+                                        <LineBreak />
+                                        要确定将如何与各种干系人打交道，如何引导他们合理参与项目。
+                                        <LineBreak />
+                                        干系人参与计划其主要组成部分为：
+                                        <LineBreak />
+                                        ·来自干系人登记册的内容。
+                                        <LineBreak />
+                                        ·干系人现有的参与项目的程度，以及所需的参与项目的程度。
+                                        <LineBreak />
+                                        ·为了获得所需的参与程度，应该采取的与干系人打交道的策略和措施。
+                                        <LineBreak />
+                                        ·干系人参与计划与沟通管理计划的关系。
+                                        <LineBreak />
+                                        ·应该如何更新干系人登记册和干系人参与计划。
+                                        <LineBreak />
+                                        支持型是仅仅自己支持项目。而领导型则不仅自己支持项目，还鼓动（领导）别人一起来支持项目。
+                                    
+
+                                
+                                <LineBreak />
+                            </Paragraph>
+                        </FlowDocument>
+                    </FlowDocumentScrollViewer>
+
+
+
+                </Expander>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <!--  数据模板  -->
+                <Expander x:Name="expanderShuJuMoBan" Header="数据模板" />
+
+                <!--  问题  -->
+                <Expander x:Name="expanderWenTi" Header="问题" />
+
+
+
+
+            </StackPanel>
+        </ScrollViewer>
+
+
+
+    </Grid>
+</UserControl>
