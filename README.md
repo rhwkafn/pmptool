@@ -90,16 +90,9 @@ https://gitee.com/akwkevin/aistudio.-introduce#https://gitee.com/akwkevin/aistud
 由于本软件使用了WebAPI服务端，故需要使用VS启动API，或者使用IIS部署服务端。以下是部署服务端的步骤：
 
 1. **启用IIS服务**：确保IIS服务已在您的系统中启用。
-<<<<<<< HEAD
-<<<<<<< HEAD
 2. **配置端口号**：在IIS中，配置端口号为81，并确保应用程序的端口号也为81。
 3. **部署API**：将发布好的API文件夹目录部署到IIS中。
-=======
-=======
->>>>>>> cb0b4bc8edc0a43223bfe01750a0da2d7e21b25a
-2. **配置端口号**：在IIS中，配置端口号为81，因为PMP安装包应用程序的端口号也为81。
-3. **部署API**：将发布好的API文件夹目录（fabu-pmapi）部署到IIS中。
->>>>>>> cb0b4bc8edc0a43223bfe01750a0da2d7e21b25a
+
 
 详细的部署步骤可以查看以下链接：
 https://blog.csdn.net/weixin_62232239/article/details/134402917
